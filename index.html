@@ -51,9 +51,32 @@ footer{text-align:center;margin-top:50px;font-size:.75rem;color:var(--mute);lett
 .rise{opacity:0;transform:translateY(14px);animation:rise .7s ease forwards}
 @keyframes rise{to{opacity:1;transform:none}}
 @media(prefers-reduced-motion:reduce){.sky i,.motes b{animation:none}.motes{display:none}.rise{animation:none;opacity:1;transform:none}a.card,.btn{transition:none}}
+
+.prog{position:fixed;top:0;left:0;height:3px;width:100%;transform-origin:0 50%;transform:scaleX(0);background:linear-gradient(90deg,#d9a441,#8a5a24);z-index:9}
+.glow{position:fixed;width:520px;height:520px;margin:-260px 0 0 -260px;border-radius:50%;pointer-events:none;z-index:-1;background:radial-gradient(circle,rgba(240,180,90,.30),transparent 62%);transition:opacity .4s;opacity:0}
+.ph{position:relative;width:196px;height:196px;margin:0 auto;display:grid;place-items:center}
+.ph:before,.ph:after{content:"";position:absolute;inset:0;border-radius:50%;border:1px dashed var(--gold);animation:spin 40s linear infinite}
+.ph:after{inset:-14px;border:1px solid rgba(184,134,59,.35);border-top-color:var(--gold);animation-duration:18s;animation-direction:reverse}
+.ph:before{box-shadow:0 0 60px rgba(232,170,90,.45) inset}
+.ph .photo{position:relative;z-index:1;transition:transform .4s}.ph:hover .photo{transform:scale(1.05) rotate(-2deg)}
+@keyframes spin{to{transform:rotate(360deg)}}
+h1{background:linear-gradient(100deg,#1d1a16 30%,#b8863b 50%,#1d1a16 70%);background-size:250% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:shine 6s ease-in-out infinite}
+@keyframes shine{0%,100%{background-position:100% 0}50%{background-position:0 0}}
+.roles span{transition:color .4s,transform .4s}.roles span.on{color:var(--ink);transform:translateY(-2px)}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:34px;text-align:center}
+.stats div{background:rgba(255,253,249,.7);backdrop-filter:blur(6px);border:1px solid var(--line);border-radius:16px;padding:14px 6px}
+.stats b{display:block;font-weight:800;font-size:1.5rem;color:var(--bronze)}.stats small{font-size:.66rem;letter-spacing:.16em;text-transform:uppercase;color:var(--mute)}
+a.card{transform-style:preserve-3d;will-change:transform;position:relative;overflow:hidden}
+a.card:after{content:"";position:absolute;inset:0;background:radial-gradient(240px circle at var(--mx,50%) var(--my,50%),rgba(232,170,90,.22),transparent 60%);opacity:0;transition:opacity .3s;pointer-events:none}
+a.card:hover:after{opacity:1}
+.rv{opacity:0;transform:translateY(22px);transition:opacity .8s,transform .8s}.rv.in{opacity:1;transform:none}
+.btn{position:relative;overflow:hidden}.btn:after{content:"";position:absolute;inset:0;background:linear-gradient(110deg,transparent 30%,rgba(255,255,255,.35) 50%,transparent 70%);transform:translateX(-120%);animation:sweep 4s ease-in-out infinite}
+@keyframes sweep{60%,100%{transform:translateX(120%)}}
+@media(prefers-reduced-motion:reduce){.ph:before,.ph:after,h1,.btn:after{animation:none}}
 </style>
 </head>
 <body>
+<div class="prog" id="prog"></div><div class="glow" id="glow"></div>
 <div class="sky" aria-hidden="true"><i></i><i></i><i></i></div><div class="motes" aria-hidden="true"><b style="left:8%;animation-delay:-2s;animation-duration:19s;width:3px;height:3px"></b><b style="left:18%;animation-delay:-9s;animation-duration:24s;width:4px;height:4px"></b><b style="left:29%;animation-delay:-5s;animation-duration:17s;width:3px;height:3px"></b><b style="left:41%;animation-delay:-13s;animation-duration:22s;width:5px;height:5px"></b><b style="left:52%;animation-delay:-1s;animation-duration:20s;width:3px;height:3px"></b><b style="left:63%;animation-delay:-16s;animation-duration:26s;width:4px;height:4px"></b><b style="left:74%;animation-delay:-7s;animation-duration:18s;width:3px;height:3px"></b><b style="left:85%;animation-delay:-11s;animation-duration:23s;width:5px;height:5px"></b><b style="left:93%;animation-delay:-4s;animation-duration:21s;width:3px;height:3px"></b></div>
 <svg class="ridge" viewBox="0 0 1600 420" preserveAspectRatio="xMidYMax slice" aria-hidden="true">
 <defs><linearGradient id="mist" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f4d9a8" stop-opacity=".0"/><stop offset="1" stop-color="#f4d9a8" stop-opacity=".55"/></linearGradient><filter id="grit" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency=".9" numOctaves="2" seed="4" result="n"/><feColorMatrix in="n" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 .5 0" result="a"/><feComposite in="a" in2="SourceGraphic" operator="in"/></filter></defs>
@@ -84,7 +107,7 @@ footer{text-align:center;margin-top:50px;font-size:.75rem;color:var(--mute);lett
 </g></svg>
 <main>
 <section class="hero">
-<img class="photo rise" src="brad.jpg" alt="Brad Borowski" width="148" height="148">
+<div class="ph rise"><img class="photo" src="brad.jpg" alt="Brad Borowski" width="148" height="148"></div>
 <h1 class="rise" style="animation-delay:.1s">Brad Borowski</h1>
 <p class="roles rise" style="animation-delay:.2s"><span>Pastor</span><span>Church Planter</span><span>Designer</span><span>Coach</span></p>
 <p class="bio rise" style="animation-delay:.3s">I'm the <b>Executive Pastor at Living Stones Church South Reno</b>, husband to Chelsea. I planted a church in Winnemucca, I design and help with digital and AI tools on the side, coach church leaders on vision, strategy and systems.</p>
@@ -122,6 +145,18 @@ if(!matchMedia('(prefers-reduced-motion:reduce)').matches){
 var f=document.getElementById('far'),m=document.getElementById('mid'),n=document.getElementById('near'),g=document.getElementById('front');
 addEventListener('scroll',function(){var y=scrollY;f.style.transform='translateY('+(-y*.03)+'px)';m.style.transform='translateY('+(-y*.045)+'px)';n.style.transform='translateY('+(-y*.07)+'px)';g.style.transform='translateY('+(-y*.1)+'px)'},{passive:true});
 }
+
+var rl=[].slice.call(document.querySelectorAll('.roles span')),ri=0;
+if(rl.length){setInterval(function(){rl.forEach(function(e){e.classList.remove('on')});rl[ri++%rl.length].classList.add('on')},1600)}
+var pg=document.getElementById('prog');
+addEventListener('scroll',function(){pg.style.transform='scaleX('+(scrollY/Math.max(1,document.body.scrollHeight-innerHeight))+')'},{passive:true});
+document.querySelectorAll('h2,.contact,footer').forEach(function(e){e.classList.add('rv')});
+var io=new IntersectionObserver(function(es){es.forEach(function(x){if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}})},{threshold:.15});
+document.querySelectorAll('.rv').forEach(function(e){io.observe(e)});
+if(!matchMedia('(prefers-reduced-motion:reduce)').matches&&matchMedia('(hover:hover)').matches){
+var gl=document.getElementById('glow');
+addEventListener('mousemove',function(e){gl.style.opacity=1;gl.style.left=e.clientX+'px';gl.style.top=e.clientY+'px';var dx=e.clientX/innerWidth-.5;[['far',6],['mid',12],['near',20],['front',30]].forEach(function(p){document.getElementById(p[0]).style.translate=(-dx*p[1])+'px 0'})});
+document.querySelectorAll('a.card').forEach(function(c){c.addEventListener('mousemove',function(e){var r=c.getBoundingClientRect(),x=(e.clientX-r.left)/r.width,y=(e.clientY-r.top)/r.height;c.style.setProperty('--mx',x*100+'%');c.style.setProperty('--my',y*100+'%');c.style.transform='perspective(700px) rotateX('+((.5-y)*7)+'deg) rotateY('+((x-.5)*9)+'deg) translateY(-3px)'});c.addEventListener('mouseleave',function(){c.style.transform=''})})}
 </script>
 </body>
 </html>
