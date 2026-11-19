@@ -1,0 +1,43 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex"><title>Edit bradborowski.com</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0e0c09;--bg2:#171410;--ink:#efe7d8;--mute:#9a8f7c;--line:#2e2820;--gold:#d4af37}
+*{box-sizing:border-box}body{margin:0;font-family:Montserrat,system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.5}
+main{max-width:720px;margin:0 auto;padding:24px 16px 120px}h1{font-size:1.2rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold)}
+label{display:block;font-size:.72rem;letter-spacing:.15em;text-transform:uppercase;color:var(--mute);margin:18px 0 6px}
+input,textarea{width:100%;background:var(--bg2);color:var(--ink);border:1px solid var(--line);border-radius:8px;padding:12px;font:inherit;font-size:16px}
+textarea{min-height:90px}.g{border-top:1px solid var(--line);margin-top:28px;padding-top:6px;color:var(--gold);font-weight:800;text-transform:uppercase;letter-spacing:.15em;font-size:.8rem}
+button{background:var(--gold);color:#0e0c09;border:0;border-radius:8px;padding:14px 22px;font:inherit;font-weight:800;font-size:1rem;cursor:pointer}
+.bar{position:fixed;left:0;right:0;bottom:0;background:var(--bg2);border-top:1px solid var(--line);padding:12px 16px;display:flex;gap:12px;align-items:center;justify-content:space-between}
+.bar span{color:var(--mute);font-size:.85rem}a{color:var(--gold)}.hint{color:var(--mute);font-size:.8rem}
+</style></head><body><main id="app">
+<h1>Edit bradborowski.com</h1>
+<div id="login"><label>Password</label><input id="pw" type="password" autocomplete="current-password"><p><button id="go">Sign in</button></p><p id="err" class="hint"></p></div>
+<div id="editor" hidden><p class="hint">Change any words or links, then tap Save. The site updates right away. Simple bold works: &lt;b&gt;word&lt;/b&gt;.</p><div id="fields"></div></div>
+</main>
+<div class="bar" id="bar" hidden><span id="msg">Ready</span><span><a href="/" target="_blank">View site</a> &nbsp; <button id="save">Save</button></span></div>
+<script>
+var API='https://bradborowski-content.lssr-api.workers.dev',tok=localStorage.getItem('bbtok')||'',defs=[],cur={};
+function $(i){return document.getElementById(i)}
+async function load(){
+ var html=await (await fetch('/index.html',{cache:'no-store'})).text();var d=new DOMParser().parseFromString(html,'text/html');
+ cur=await (await fetch(API+'/content',{cache:'no-store'})).json();var group='Hero';defs=[];
+ d.querySelectorAll('[data-k],[data-h]').forEach(function(e){
+  var gp=e.closest('.grp');if(gp&&gp.querySelector('h2'))group=gp.querySelector('h2').textContent;else if(e.closest('header'))group='Top of page';else if(e.closest('#about'))group='About';else if(e.closest('.contact'))group='Contact';
+  var k=e.getAttribute('data-k'),h=e.getAttribute('data-h');
+  if(k)defs.push({g:group,key:k,kind:'text',label:(e.tagName==='H2'||e.tagName==='P'&&e.className==='bio')?e.tagName==='P'?'Paragraph':'Heading':'Text',val:e.innerHTML,long:e.className==='bio'});
+  if(h)defs.push({g:group,key:h,kind:'link',label:'Link',val:e.getAttribute('href')});
+ });
+ var out='',last='';defs.forEach(function(f,i){if(f.g!==last){out+='<div class="g">'+f.g+'</div>';last=f.g}
+  var v=cur[f.key]!=null?cur[f.key]:f.val;out+='<label>'+f.label+(f.kind==='link'?' (web address)':'')+'</label>'+(f.long?'<textarea data-i="'+i+'">':'<input data-i="'+i+'" value="')+esc(v)+(f.long?'</textarea>':'">')});
+ $('fields').innerHTML=out;$('login').hidden=true;$('editor').hidden=false;$('bar').hidden=false;
+}
+function esc(s){return String(s).replace(/&/g,'&amp;').replace(/"/g,'&quot;').replace(/</g,'&lt;')}
+async function login(){var r=await fetch(API+'/login',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({password:$('pw').value})});
+ if(!r.ok){$('err').textContent='That password is not right.';return}tok=(await r.json()).token;localStorage.setItem('bbtok',tok);load()}
+async function save(){var o={};document.querySelectorAll('[data-i]').forEach(function(el){var f=defs[el.getAttribute('data-i')];if(el.value!==f.val)o[f.key]=el.value});
+ $('msg').textContent='Saving…';var r=await fetch(API+'/content',{method:'PUT',headers:{'content-type':'application/json',authorization:'Bearer '+tok},body:JSON.stringify(o)});
+ if(r.status===401){localStorage.removeItem('bbtok');location.reload();return}$('msg').textContent=r.ok?'Saved. Live now.':'Could not save'}
+$('go').onclick=login;$('pw').onkeydown=function(e){if(e.key==='Enter')login()};$('save').onclick=save;
+if(tok)load().catch(function(){});
+</script></body></html>

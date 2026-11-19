@@ -1,0 +1,8 @@
+name = "bradborowski-content"
+main = "index.js"
+compatibility_date = "2024-11-01"
+workers_dev = true
+
+[[kv_namespaces]]
+binding = "SITE"
+id = "9ce5f43ff5294703affdab0aaf10e0c5"

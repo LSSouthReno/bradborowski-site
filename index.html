@@ -43,10 +43,10 @@ h1 span:nth-child(2) i{animation-delay:.15s;color:transparent;-webkit-text-strok
 @keyframes bob{50%{transform:translateY(8px)}}
 section.blk{position:relative;padding:110px 28px;border-top:1px solid var(--line)}
 .blk .wrap{display:grid;grid-template-columns:1fr 1.5fr;gap:60px;align-items:center}
-.photo{position:relative;aspect-ratio:4/5;overflow:hidden;background:var(--bg2)}
+.photo{position:relative;aspect-ratio:1/1;overflow:hidden;background:var(--bg2);border-radius:50%;width:min(100%,420px);justify-self:center}
 .photo img{width:100%;height:100%;object-fit:cover;filter:grayscale(.85) contrast(1.15) sepia(.25);transition:filter .6s,transform .8s}
 .photo:hover img{filter:none;transform:scale(1.04)}
-.photo:after{content:"";position:absolute;inset:12px;border:1px solid rgba(212,175,55,.55);pointer-events:none}
+.photo:after{content:"";position:absolute;inset:12px;border:1px solid rgba(212,175,55,.55);border-radius:50%;pointer-events:none}
 .lab{font-size:.72rem;letter-spacing:.35em;text-transform:uppercase;color:var(--gold);font-weight:600;margin-bottom:18px}
 .big{font-weight:800;text-transform:uppercase;font-size:clamp(1.8rem,4.6vw,3.4rem);line-height:1.04;letter-spacing:-.01em}
 .big em{font-style:normal;color:var(--gold)}
@@ -102,54 +102,53 @@ footer{padding:26px;text-align:center;font-size:.7rem;letter-spacing:.3em;text-t
 <path d="M1450 380l-22 0 22-72 22 72zM1450 340l-17 0 17-58 17 58z"/>
 <path d="M980 380c0-30 6-50 12-64l-14-26m14 26l16-22m-16 22c2 12 4 22 4 64" stroke="#0a0806" stroke-width="5" fill="none"/></g></svg>
 <div class="wrap">
-<p class="kicker">Reno · Carson City · Nevada</p>
-<h1><span><i>Brad</i></span><span><i>Borowski</i></span></h1>
-<div class="roles"><b>Executive Pastor</b><b>Church Planter</b><b>Coach</b><b>AI Builder</b><b>Hunter</b></div>
+<p class="kicker" data-k="t1">Reno · Carson City · Nevada</p>
+<h1><span><i data-k="hfirst">Brad</i></span><span><i data-k="hlast">Borowski</i></span></h1>
+<div class="roles"><b data-k="t2">Executive Pastor</b><b data-k="t3">Church Planter</b><b data-k="t4">Coach</b><b data-k="t5">AI Builder</b><b data-k="t6">Hunter</b></div>
 </div>
 <div class="scroll">Scroll</div>
 </header>
 
 <section class="blk" id="about">
 <div class="wrap">
-<div class="photo rv"><img src="brad.jpg" alt="Brad Borowski" width="400" height="500"></div>
+<div class="photo rv"><img src="brad.jpg" alt="Brad Borowski" width="400" height="400"></div>
 <div class="rv">
-<p class="lab">The man behind it</p>
-<h2 class="big">Lead with <em>conviction.</em> Build with <em>purpose.</em> Stay in the <em>field.</em></h2>
-<p class="bio">I'm the <b>Executive Pastor at Living Stones Church South Reno</b>, husband to Chelsea. I'm also the <b>Assistant Director of Operations and a Pilot at Freedom Air (Freedom Air Services)</b>. I planted a church in Winnemucca, I design and help with digital and AI tools on the side, coach church leaders on vision, strategy and systems.</p>
+<p class="lab" data-k="t7">The man behind it</p>
+<h2 class="big" data-k="t9">Lead with <em>conviction.</em> Build with <em>purpose.</em> Stay in the <em>field.</em></h2>
+<p class="bio" data-k="t11">I'm the <b>Executive Pastor at Living Stones Church South Reno</b>, husband to Chelsea. I'm also the <b>Assistant Director of Operations and a Pilot at Freedom Air (Freedom Air Services)</b>. I planted a church in Winnemucca, I design and help with digital and AI tools on the side, coach church leaders on vision, strategy and systems.</p>
 </div>
-</div>
-</section>
-
-<section class="blk">
-<div class="three">
-<div class="pillar rv"><div class="n">01</div><h3>Coach</h3><p>One-on-one coaching for church leaders. Vision, strategy and systems that hold up under pressure.</p><svg viewBox="0 0 24 24"><path d="M3 20l6-11 4 6 3-4 5 9z"/></svg></div>
-<div class="pillar rv" style="transition-delay:.12s"><div class="n">02</div><h3>Build</h3><p>Digital and AI tools that take work off people's plates, so ministry gets the time back.</p><svg viewBox="0 0 24 24"><path d="M12 2v4M12 18v4M2 12h4M18 12h4M6 6l3 3M15 15l3 3M18 6l-3 3M9 15l-3 3"/><circle cx="12" cy="12" r="3"/></svg></div>
-<div class="pillar rv" style="transition-delay:.24s"><div class="n">03</div><h3>Hunt</h3><p>Early mornings, high country, patience and a steady hand. The best thinking happens out there.</p><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><path d="M12 1v6M12 17v6M1 12h6M17 12h6"/></svg></div>
 </div>
 </section>
 
 <section class="blk" id="work">
 <div class="links">
-<div class="grp rv"><h2>Church</h2>
-<a class="row" href="https://livingstoneschurches.com/media/speaker/Pastor+Brad+Borowski" target="_blank" rel="noopener"><span><strong>Sermons &amp; Speaker Page</strong><small>Messages at Living Stones Churches</small></span><span class="go">→</span></a>
-<a class="row" href="https://livingstoneschurches.com/southreno" target="_blank" rel="noopener"><span><strong>Living Stones Church South Reno</strong><small>95 Foothill Rd, Reno · Sundays 8, 9:30 &amp; 11</small></span><span class="go">→</span></a></div>
-<div class="grp rv"><h2>Design &amp; Coaching</h2>
-<a class="row" href="https://anchorsoul.net/welcome" target="_blank" rel="noopener"><span><strong>Anchor Soul Design</strong><small>Graphic design with purpose</small></span><span class="go">→</span></a>
-<a class="row" href="https://anchorsoul.net/coachinghome" target="_blank" rel="noopener"><span><strong>Anchor Soul Coaching</strong><small>One-on-one coaching for church leaders</small></span><span class="go">→</span></a>
-<a class="row" href="https://www.creationswap.com/BradBorowski" target="_blank" rel="noopener"><span><strong>CreationSwap</strong><small>Creative work &amp; media</small></span><span class="go">→</span></a></div>
-<div class="grp rv" id="find"><h2>Find me</h2>
-<a class="row" href="https://www.instagram.com/bradborowski/" target="_blank" rel="noopener"><span><strong>Instagram</strong><small>@bradborowski</small></span><span class="go">→</span></a>
-<a class="row" href="https://www.facebook.com/brad.borowski.52" target="_blank" rel="noopener"><span><strong>Facebook</strong><small>Brad Borowski</small></span><span class="go">→</span></a>
-<a class="row" href="https://www.linkedin.com/search/results/people/?keywords=Brad%20Borowski%20Living%20Stones%20Church" target="_blank" rel="noopener"><span><strong>LinkedIn</strong><small>Professional background</small></span><span class="go">→</span></a></div>
+<div class="grp rv"><h2 data-k="t12">Church</h2>
+<a class="row" data-h="h32" href="https://livingstoneschurches.com/media/speaker/Pastor+Brad+Borowski" target="_blank" rel="noopener"><span><strong data-k="t15">Sermons &amp; Speaker Page</strong><small data-k="t23">Messages at Living Stones Churches</small></span><span class="go">→</span></a>
+<a class="row" data-h="h33" href="https://livingstoneschurches.com/southreno" target="_blank" rel="noopener"><span><strong data-k="t16">Living Stones Church South Reno</strong><small data-k="t24">95 Foothill Rd, Reno · Sundays 8, 9:30 &amp; 11</small></span><span class="go">→</span></a></div>
+<div class="grp rv"><h2 data-k="t13">Design &amp; Coaching</h2>
+<a class="row" data-h="h34" href="https://anchorsoul.net/welcome" target="_blank" rel="noopener"><span><strong data-k="t17">Anchor Soul Design</strong><small data-k="t25">Graphic design with purpose</small></span><span class="go">→</span></a>
+<a class="row" data-h="h35" href="https://anchorsoul.net/coachinghome" target="_blank" rel="noopener"><span><strong data-k="t18">Anchor Soul Coaching</strong><small data-k="t26">One-on-one coaching for church leaders</small></span><span class="go">→</span></a>
+<a class="row" data-h="h36" href="https://www.creationswap.com/BradBorowski" target="_blank" rel="noopener"><span><strong data-k="t19">CreationSwap</strong><small data-k="t27">Creative work &amp; media</small></span><span class="go">→</span></a></div>
+<div class="grp rv" id="find"><h2 data-k="t14">Find me</h2>
+<a class="row" data-h="h37" href="https://www.instagram.com/bradborowski/" target="_blank" rel="noopener"><span><strong data-k="t20">Instagram</strong><small data-k="t28">@bradborowski</small></span><span class="go">→</span></a>
+<a class="row" data-h="h38" href="https://www.facebook.com/brad.borowski.52" target="_blank" rel="noopener"><span><strong data-k="t21">Facebook</strong><small data-k="t29">Brad Borowski</small></span><span class="go">→</span></a>
+<a class="row" data-h="h39" href="https://www.linkedin.com/search/results/people/?keywords=Brad%20Borowski%20Living%20Stones%20Church" target="_blank" rel="noopener"><span><strong data-k="t22">LinkedIn</strong><small data-k="t30">Professional background</small></span><span class="go">→</span></a></div>
 </div>
 </section>
 
 <section class="contact rv">
-<p class="lab">Say hello</p>
-<h2 class="big">Let's talk.</h2>
-<a class="btn" href="mailto:brad@lschurches.com">brad@lschurches.com</a>
+<p class="lab" data-k="t8">Say hello</p>
+<h2 class="big" data-k="t10">Let's talk.</h2>
+<a class="btn" data-h="hbtn" data-k="tbtn" href="mailto:brad@lschurches.com">brad@lschurches.com</a>
 </section>
 <footer>© <span id="y">2026</span> Brad Borowski</footer>
+<script>
+(function(){var API='https://bradborowski-content.lssr-api.workers.dev/content';
+fetch(API,{cache:'no-store'}).then(function(r){return r.json()}).then(function(c){
+document.querySelectorAll('[data-k]').forEach(function(e){var v=c[e.getAttribute('data-k')];if(typeof v==='string')e.innerHTML=v});
+document.querySelectorAll('[data-h]').forEach(function(e){var v=c[e.getAttribute('data-h')];if(typeof v==='string'&&/^(https?:|mailto:|tel:|\/|#)/.test(v))e.setAttribute('href',v)})
+}).catch(function(){})})();
+</script>
 <script>
 document.getElementById('y').textContent=new Date().getFullYear();
 var pg=document.getElementById('prog');
