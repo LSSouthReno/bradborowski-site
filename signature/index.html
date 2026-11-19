@@ -1,0 +1,31 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>Email signature</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800;900&display=swap" rel="stylesheet">
+<style>body{margin:0;background:#0e0c09;color:#efe7d8;font-family:Montserrat,Arial,Helvetica,sans-serif;padding:32px 20px}
+.w{max-width:680px;margin:0 auto}h1{font-weight:900;text-transform:uppercase;font-size:clamp(1.5rem,5vw,2.2rem);margin:0 0 6px}h1 span{color:#d4af37}
+p.s{color:#cfc5b2;font-weight:300;margin:0 0 22px}.card{background:#fff;border-radius:6px;padding:24px;overflow-x:auto}
+button{display:block;width:100%;margin:22px 0 8px;padding:20px;background:#d4af37;color:#0e0c09;border:0;font:800 1rem Montserrat,Arial,sans-serif;text-transform:uppercase;letter-spacing:.14em;cursor:pointer}
+#m{min-height:1.4em;color:#d4af37;font-weight:600;margin-bottom:18px}h2{color:#d4af37;font-size:.8rem;letter-spacing:.2em;text-transform:uppercase;margin:26px 0 8px}ol{margin:0;padding-left:20px;line-height:1.7;font-weight:300}</style></head><body><div class="w">
+<h1>Your new <span>signature</span></h1><p class="s">Tap the button, then paste it into your email settings.</p>
+<div class="card" id="sig"><table cellpadding="0" cellspacing="0" border="0" role="presentation" style="border-collapse:collapse;font-family:Montserrat,Arial,Helvetica,sans-serif;color:#0e0c09;">
+<tr><td style="padding:0 0 14px 0;font-family:Montserrat,Arial,Helvetica,sans-serif;font-size:15px;color:#0e0c09;">For His Glory,</td></tr>
+<tr><td>
+<table cellpadding="0" cellspacing="0" border="0" role="presentation" style="border-collapse:collapse;">
+<tr>
+<td width="4" style="width:4px;background-color:#d4af37;font-size:0;line-height:0;">&nbsp;</td>
+<td width="16" style="width:16px;font-size:0;line-height:0;">&nbsp;</td>
+<td valign="top" style="padding:0 16px 0 0;"><img src="https://bradborowski.com/brad.jpg" alt="Brad Borowski" width="72" height="72" style="display:block;width:72px;height:72px;border-radius:50%;border:2px solid #d4af37;"></td>
+<td valign="top" style="font-family:Montserrat,Arial,Helvetica,sans-serif;">
+<div style="font-family:Montserrat,Arial,Helvetica,sans-serif;font-size:20px;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:#0e0c09;line-height:1.1;">Brad Borowski</div>
+<div style="font-family:Montserrat,Arial,Helvetica,sans-serif;font-size:11px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:#9c7a26;line-height:1.5;padding-top:5px;">Executive Pastor &middot; Church Planter &middot; Coach &middot; AI Builder &middot; Hunter</div>
+<div style="padding-top:10px;line-height:1.1;"><span style="font-family:Montserrat,Arial,Helvetica,sans-serif;font-size:13px;font-weight:800;letter-spacing:2px;color:#0e0c09;">LIVING STONES</span><br><span style="font-family:Montserrat,Arial,Helvetica,sans-serif;font-size:9px;font-weight:600;letter-spacing:3px;color:#9c7a26;">SOUTH RENO</span></div>
+<div style="font-family:Montserrat,Arial,Helvetica,sans-serif;font-size:12px;color:#3a332a;line-height:1.6;padding-top:8px;">95 Foothill Rd, Reno NV<br><a href="mailto:brad@lschurches.com" style="color:#0e0c09;text-decoration:none;">brad@lschurches.com</a> &nbsp;<span style="color:#d4af37;">|</span>&nbsp; <a href="tel:+18509826260" style="color:#0e0c09;text-decoration:none;">850-982-6260</a><br><a href="https://bradborowski.com" style="color:#9c7a26;font-weight:700;text-decoration:none;">bradborowski.com</a></div>
+<div style="font-family:Montserrat,Arial,Helvetica,sans-serif;font-size:11px;letter-spacing:1px;text-transform:uppercase;padding-top:8px;line-height:1.6;"><a href="https://livingstoneschurches.com/southreno" style="color:#9c7a26;text-decoration:none;font-weight:600;">Church</a> &nbsp;&middot;&nbsp; <a href="https://anchorsoul.net/welcome" style="color:#9c7a26;text-decoration:none;font-weight:600;">Anchor Soul Design</a> &nbsp;&middot;&nbsp; <a href="https://www.instagram.com/bradborowski/" style="color:#9c7a26;text-decoration:none;font-weight:600;">Instagram</a> &nbsp;&middot;&nbsp; <a href="https://www.linkedin.com/search/results/people/?keywords=Brad%20Borowski%20Living%20Stones%20Church" style="color:#9c7a26;text-decoration:none;font-weight:600;">LinkedIn</a></div>
+</td></tr></table>
+</td></tr></table>
+</div>
+<button id="b">Copy signature</button><div id="m"></div>
+<h2>Gmail</h2><ol><li>Open Settings &gt; See all settings &gt; General, scroll to Signature.</li><li>Create new (or click your existing one), click in the box and paste.</li><li>Scroll down and click Save Changes.</li></ol>
+<h2>Apple Mail</h2><ol><li>Mail &gt; Settings &gt; Signatures, click + to add one.</li><li>Untick "Always match my default message font", then paste into the right-hand box.</li><li>Pick it as the default for your account.</li></ol></div>
+<script>document.getElementById('b').onclick=async function(){var h=document.getElementById('sig').innerHTML,m=document.getElementById('m');
+try{await navigator.clipboard.write([new ClipboardItem({'text/html':new Blob([h],{type:'text/html'}),'text/plain':new Blob([document.getElementById('sig').innerText],{type:'text/plain'})})]);m.textContent='Copied. Now paste it into your signature.'}
+catch(e){var r=document.createRange();r.selectNode(document.getElementById('sig'));var s=getSelection();s.removeAllRanges();s.addRange(r);try{document.execCommand('copy');m.textContent='Copied. Now paste it into your signature.'}catch(x){m.textContent='Press and hold the signature to copy it.'}}};</script></body></html>
