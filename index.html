@@ -25,9 +25,8 @@ nav a{color:#fff;text-decoration:none;margin-left:22px}
 nav a:first-child{margin:0;font-weight:900}
 .hero{position:relative;min-height:100vh;display:flex;flex-direction:column;justify-content:flex-end;padding:120px 28px 14vh;overflow:hidden;background:radial-gradient(120% 80% at 70% 0%,#3a2a14 0%,#171209 45%,var(--bg) 80%)}
 .topo{position:absolute;inset:0;opacity:.22;pointer-events:none}
-.ridge{position:absolute;left:0;right:0;bottom:0;width:100%;height:46vh;pointer-events:none}
-.ridge path{transition:transform .2s linear}
-.sun{position:absolute;right:12%;top:16%;width:min(26vw,260px);aspect-ratio:1;border-radius:50%;background:radial-gradient(circle at 50% 50%,#f0c868 0,#c9892f 45%,rgba(180,84,31,.0) 72%);filter:blur(2px);opacity:.75;animation:pulse 9s ease-in-out infinite alternate}
+.ridge{position:absolute;left:0;right:0;bottom:-9vh;width:100%;height:55vh;pointer-events:none;will-change:transform;transform:translate3d(0,0,0);backface-visibility:hidden}
+.sun{position:absolute;right:12%;top:16%;width:min(26vw,260px);aspect-ratio:1;border-radius:50%;background:radial-gradient(circle at 50% 50%,#f0c868 0,#c9892f 45%,rgba(180,84,31,.0) 72%);opacity:.75;will-change:transform,opacity;animation:pulse 9s ease-in-out infinite alternate}
 @keyframes pulse{to{transform:scale(1.12);opacity:.95}}
 .wrap{position:relative;z-index:2;max-width:1100px;margin:0 auto;width:100%}
 .kicker{font-size:.75rem;letter-spacing:.4em;text-transform:uppercase;color:var(--gold);font-weight:600;margin-bottom:22px;display:flex;align-items:center;gap:14px}
@@ -93,17 +92,15 @@ footer{padding:26px;text-align:center;font-size:.7rem;letter-spacing:.3em;text-t
 <path d="M-20 420C120 380 200 440 330 400S560 330 820 380"/><path d="M-20 380C130 330 210 400 340 360S570 290 820 340"/><path d="M-20 340C140 280 220 360 350 320S580 250 820 300"/><path d="M-20 300C150 230 230 320 360 280S590 210 820 260"/><path d="M-20 260C160 180 240 280 370 240S600 170 820 220"/><path d="M-20 220C170 130 250 240 380 200S610 130 820 180"/><path d="M-20 180C180 80 260 200 390 160S620 90 820 140"/><path d="M-20 140C190 30 270 160 400 120S630 50 820 100"/>
 </svg>
 <div class="sun" aria-hidden="true"></div>
-<svg class="ridge" viewBox="0 0 1600 420" preserveAspectRatio="xMidYMax slice" aria-hidden="true">
-<path id="r1" d="M0 190L90 150L170 175L260 110L330 140L430 70L520 120L610 95L700 150L800 120L900 170L1000 100L1100 140L1200 80L1300 130L1400 100L1500 150L1600 120V420H0Z" fill="#2a1f12"/>
-<path id="r2" d="M0 260L120 215L210 250L320 190L420 235L520 200L640 250L760 205L880 255L990 210L1100 250L1210 195L1330 245L1450 215L1600 250V420H0Z" fill="#1d160d"/>
-<path id="r3" d="M0 330L100 305L220 335L340 300L460 330L580 310L700 340L820 305L940 335L1060 312L1180 340L1300 310L1420 335L1600 315V420H0Z" fill="#120e08"/>
-<g id="r4" fill="#0a0806"><path d="M0 380L1600 380V420H0Z"/>
+<svg class="ridge" viewBox="0 0 1600 420" preserveAspectRatio="xMidYMax slice" aria-hidden="true" id="r1"><path d="M0 190L90 150L170 175L260 110L330 140L430 70L520 120L610 95L700 150L800 120L900 170L1000 100L1100 140L1200 80L1300 130L1400 100L1500 150L1600 120V420H0Z" fill="#2a1f12"/></svg>
+<svg class="ridge" viewBox="0 0 1600 420" preserveAspectRatio="xMidYMax slice" aria-hidden="true" id="r2"><path d="M0 260L120 215L210 250L320 190L420 235L520 200L640 250L760 205L880 255L990 210L1100 250L1210 195L1330 245L1450 215L1600 250V420H0Z" fill="#1d160d"/></svg>
+<svg class="ridge" viewBox="0 0 1600 420" preserveAspectRatio="xMidYMax slice" aria-hidden="true" id="r3"><path d="M0 330L100 305L220 335L340 300L460 330L580 310L700 340L820 305L940 335L1060 312L1180 340L1300 310L1420 335L1600 315V420H0Z" fill="#120e08"/></svg>
+<svg class="ridge" viewBox="0 0 1600 420" preserveAspectRatio="xMidYMax slice" aria-hidden="true" id="r4"><g fill="#0a0806"><path d="M0 380L1600 380V420H0Z"/>
 <path d="M120 380l-22 0 22-70 22 70zM120 345l-18 0 18-60 18 60zM120 310l-13 0 13-48 13 48z"/>
 <path d="M240 382l-26 0 26-90 26 90zM240 335l-20 0 20-70 20 70z"/>
 <path d="M1320 382l-26 0 26-88 26 88zM1320 335l-20 0 20-66 20 66z"/>
 <path d="M1450 380l-22 0 22-72 22 72zM1450 340l-17 0 17-58 17 58z"/>
-<path d="M980 380c0-30 6-50 12-64l-14-26m14 26l16-22m-16 22c2 12 4 22 4 64" stroke="#0a0806" stroke-width="5" fill="none"/></g>
-</svg>
+<path d="M980 380c0-30 6-50 12-64l-14-26m14 26l16-22m-16 22c2 12 4 22 4 64" stroke="#0a0806" stroke-width="5" fill="none"/></g></svg>
 <div class="wrap">
 <p class="kicker">Reno · Carson City · Nevada</p>
 <h1><span><i>Brad</i></span><span><i>Borowski</i></span></h1>
@@ -156,18 +153,19 @@ footer{padding:26px;text-align:center;font-size:.7rem;letter-spacing:.3em;text-t
 <script>
 document.getElementById('y').textContent=new Date().getFullYear();
 var pg=document.getElementById('prog');
-addEventListener('scroll',function(){pg.style.transform='scaleX('+(scrollY/Math.max(1,document.body.scrollHeight-innerHeight))+')'},{passive:true});
+var pt=false;addEventListener('scroll',function(){if(pt)return;pt=true;requestAnimationFrame(function(){pt=false;pg.style.transform='scaleX('+(scrollY/Math.max(1,document.body.scrollHeight-innerHeight))+')'})},{passive:true});
 var io=new IntersectionObserver(function(es){es.forEach(function(x){if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}})},{threshold:.12});
 document.querySelectorAll('.rv').forEach(function(e){io.observe(e)});
 if(!matchMedia('(prefers-reduced-motion:reduce)').matches){
-var rs=['r1','r2','r3','r4'].map(function(i){return document.getElementById(i)});
-addEventListener('scroll',function(){var y=Math.min(scrollY,innerHeight);rs.forEach(function(r,i){r.style.transform='translateY('+(-y*(.03+i*.05))+'px)'})},{passive:true});
+var rs=['r1','r2','r3','r4'].map(function(i){return document.getElementById(i)}),sy=0,tk=false,K=[.03,.08,.13,.18];
+function paint(){tk=false;var y=Math.min(sy,innerHeight);for(var i=0;i<rs.length;i++)rs[i].style.transform='translate3d(0,'+(-y*K[i]).toFixed(1)+'px,0)'}
+addEventListener('scroll',function(){sy=scrollY;if(!tk){tk=true;requestAnimationFrame(paint)}},{passive:true});
 if(matchMedia('(hover:hover) and (pointer:fine)').matches){var pl=document.getElementById('plane'),tx=-100,ty=-100,px=-100,py=-100,ang=0,seen=false;
 addEventListener('mousemove',function(e){tx=e.clientX;ty=e.clientY;if(!seen){seen=true;px=tx;py=ty;pl.style.opacity=1}},{passive:true});
 document.addEventListener('mouseleave',function(){pl.style.opacity=0;seen=false});
 (function fly(){var dx=tx-px,dy=ty-py;px+=dx*.14;py+=dy*.14;
 if(Math.hypot(dx,dy)>6){var want=Math.atan2(dy,dx),d=want-ang;d-=Math.round(d/6.2832)*6.2832;ang+=d*.12}
-pl.style.transform='translate('+(px+14)+'px,'+(py+14)+'px) rotate('+ang+'rad)';requestAnimationFrame(fly)})()}}
+pl.style.transform='translate3d('+(px+14)+'px,'+(py+14)+'px,0) rotate('+ang+'rad)';requestAnimationFrame(fly)})()}}
 </script>
 </body>
 </html>
