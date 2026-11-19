@@ -3,160 +3,167 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Brad Borowski — Pastor, Church Planter, Designer, Coach</title>
-<meta name="description" content="Brad Borowski: Executive Pastor at Living Stones Church South Reno, church planter, designer and coach.">
+<title>Brad Borowski — Pastor. Coach. Builder. Hunter.</title>
+<meta name="description" content="Brad Borowski: Executive Pastor at Living Stones Church South Reno, church planter, coach, designer and AI builder.">
 <meta property="og:title" content="Brad Borowski">
-<meta property="og:description" content="Executive Pastor · Church planter · Designer · Coach">
+<meta property="og:description" content="Executive Pastor · Church planter · Coach · AI builder · Hunter">
 <meta property="og:image" content="https://bradborowski.com/brad.jpg">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='50' fill='%23a8742f'/%3E%3Ctext x='50' y='66' font-size='52' text-anchor='middle' fill='%23fff' font-family='sans-serif' font-weight='700'%3EB%3C/text%3E%3C/svg%3E">
+<meta name="theme-color" content="#0e0c09">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%230e0c09'/%3E%3Ctext x='50' y='70' font-size='62' text-anchor='middle' fill='%23d4af37' font-family='sans-serif' font-weight='800'%3EB%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;800;900&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#f4efe7;--ink:#1d1a16;--mute:#6d655a;--card:#fffdf9;--line:#e3d9c8;--gold:#b8863b;--bronze:#8a5a24}
+:root{--bg:#0e0c09;--bg2:#171410;--ink:#efe7d8;--mute:#9a8f7c;--line:#2e2820;--gold:#d4af37;--bronze:#9c7a26;--rust:#b4541f;--moss:#4a5a38}
 *{box-sizing:border-box;margin:0}
-body{font-family:Montserrat,system-ui,sans-serif;background:transparent;color:var(--ink);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
-.sky{position:fixed;inset:0;z-index:-2;pointer-events:none;overflow:hidden;background:linear-gradient(180deg,#f8efe0 0%,#f4efe7 45%,#efdfc4 100%)}
-.sky i{position:absolute;border-radius:50%;filter:blur(70px);will-change:transform;animation:drift 26s ease-in-out infinite alternate}
-.sky i:nth-child(1){width:60vmax;height:60vmax;left:-15vmax;top:-20vmax;background:radial-gradient(circle,rgba(232,170,90,.55),transparent 65%)}
-.sky i:nth-child(2){width:50vmax;height:50vmax;right:-15vmax;top:5vh;background:radial-gradient(circle,rgba(214,140,110,.40),transparent 65%);animation-duration:34s;animation-delay:-8s}
-.sky i:nth-child(3){width:55vmax;height:40vmax;left:15vw;bottom:-18vmax;background:radial-gradient(circle,rgba(184,134,59,.38),transparent 65%);animation-duration:30s;animation-delay:-14s}
-@keyframes drift{from{transform:translate3d(0,0,0) scale(1)}to{transform:translate3d(8vw,6vh,0) scale(1.15)}}
-.motes{position:fixed;inset:0;z-index:-1;pointer-events:none}
-.motes b{position:absolute;bottom:-10px;width:4px;height:4px;border-radius:50%;background:#d9a441;opacity:0;animation:float 18s linear infinite}
-@keyframes float{0%{transform:translateY(0) translateX(0);opacity:0}10%{opacity:.6}90%{opacity:.4}100%{transform:translateY(-105vh) translateX(30px);opacity:0}}
-.ridge{position:fixed;inset:auto 0 0 0;width:100%;height:36vh;z-index:-1;opacity:.92;pointer-events:none}
-.ridge g{transition:transform .2s linear}
-main{max-width:640px;margin:0 auto;padding:56px 22px 90px}
-.hero{text-align:center}
-.photo{width:148px;height:148px;border-radius:50%;object-fit:cover;border:4px solid var(--card);box-shadow:0 0 0 2px var(--gold),0 14px 30px rgba(60,40,10,.18)}
-h1{font-weight:800;letter-spacing:.14em;text-transform:uppercase;font-size:clamp(1.7rem,7vw,2.5rem);margin-top:22px;line-height:1.1}
-.roles{margin-top:12px;font-size:.78rem;letter-spacing:.2em;text-transform:uppercase;color:var(--bronze);font-weight:600}
-.roles span{display:inline-block;padding:0 .5em}
-.roles span+span:before{content:"·";margin-right:1em;color:var(--gold)}
-.bio{margin:28px auto 0;max-width:30em;font-weight:300;font-size:1.05rem;color:#3b352d}
-.bio b{font-weight:600}
-h2{margin:48px 0 14px;font-size:.72rem;letter-spacing:.28em;text-transform:uppercase;color:var(--mute);font-weight:600;display:flex;align-items:center;gap:12px}
-h2:after{content:"";flex:1;height:1px;background:var(--line)}
-.cards{display:grid;gap:12px}
-a.card{display:flex;align-items:center;gap:16px;padding:16px 18px;background:var(--card);border:1px solid var(--line);border-radius:16px;color:inherit;text-decoration:none;transition:transform .25s,box-shadow .25s,border-color .25s}
-a.card:hover,a.card:focus-visible{transform:translateY(-3px);box-shadow:0 12px 26px rgba(80,55,20,.14);border-color:var(--gold);outline:none}
-.ico{flex:none;width:44px;height:44px;border-radius:12px;background:var(--bg);display:grid;place-items:center;color:var(--bronze)}
-.ico svg{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
-.t{flex:1}.t strong{display:block;font-weight:600;font-size:.98rem}.t small{color:var(--mute);font-size:.82rem;font-weight:400}
-.go{color:var(--gold);transition:transform .25s}a.card:hover .go{transform:translateX(4px)}
-.contact{text-align:center;margin-top:44px}
-.btn{display:inline-block;background:var(--ink);color:#fff;padding:14px 30px;border-radius:99px;text-decoration:none;font-weight:600;letter-spacing:.08em;font-size:.9rem;transition:background .25s,transform .25s}
-.btn:hover{background:var(--bronze);transform:translateY(-2px)}
-footer{text-align:center;margin-top:50px;font-size:.75rem;color:var(--mute);letter-spacing:.08em}
-.rise{opacity:0;transform:translateY(14px);animation:rise .7s ease forwards}
-@keyframes rise{to{opacity:1;transform:none}}
-@media(prefers-reduced-motion:reduce){.sky i,.motes b{animation:none}.motes{display:none}.rise{animation:none;opacity:1;transform:none}a.card,.btn{transition:none}}
-
-.prog{position:fixed;top:0;left:0;height:3px;width:100%;transform-origin:0 50%;transform:scaleX(0);background:linear-gradient(90deg,#d9a441,#8a5a24);z-index:9}
-.glow{position:fixed;width:520px;height:520px;margin:-260px 0 0 -260px;border-radius:50%;pointer-events:none;z-index:-1;background:radial-gradient(circle,rgba(240,180,90,.30),transparent 62%);transition:opacity .4s;opacity:0}
-.ph{position:relative;width:196px;height:196px;margin:0 auto;display:grid;place-items:center}
-.ph:before,.ph:after{content:"";position:absolute;inset:0;border-radius:50%;border:1px dashed var(--gold);animation:spin 40s linear infinite}
-.ph:after{inset:-14px;border:1px solid rgba(184,134,59,.35);border-top-color:var(--gold);animation-duration:18s;animation-direction:reverse}
-.ph:before{box-shadow:0 0 60px rgba(232,170,90,.45) inset}
-.ph .photo{position:relative;z-index:1;transition:transform .4s}.ph:hover .photo{transform:scale(1.05) rotate(-2deg)}
-@keyframes spin{to{transform:rotate(360deg)}}
-h1{background:linear-gradient(100deg,#1d1a16 30%,#b8863b 50%,#1d1a16 70%);background-size:250% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:shine 6s ease-in-out infinite}
-@keyframes shine{0%,100%{background-position:100% 0}50%{background-position:0 0}}
-.roles span{transition:color .4s,transform .4s}.roles span.on{color:var(--ink);transform:translateY(-2px)}
-.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:34px;text-align:center}
-.stats div{background:rgba(255,253,249,.7);backdrop-filter:blur(6px);border:1px solid var(--line);border-radius:16px;padding:14px 6px}
-.stats b{display:block;font-weight:800;font-size:1.5rem;color:var(--bronze)}.stats small{font-size:.66rem;letter-spacing:.16em;text-transform:uppercase;color:var(--mute)}
-a.card{transform-style:preserve-3d;will-change:transform;position:relative;overflow:hidden}
-a.card:after{content:"";position:absolute;inset:0;background:radial-gradient(240px circle at var(--mx,50%) var(--my,50%),rgba(232,170,90,.22),transparent 60%);opacity:0;transition:opacity .3s;pointer-events:none}
-a.card:hover:after{opacity:1}
-.rv{opacity:0;transform:translateY(22px);transition:opacity .8s,transform .8s}.rv.in{opacity:1;transform:none}
-.btn{position:relative;overflow:hidden}.btn:after{content:"";position:absolute;inset:0;background:linear-gradient(110deg,transparent 30%,rgba(255,255,255,.35) 50%,transparent 70%);transform:translateX(-120%);animation:sweep 4s ease-in-out infinite}
-@keyframes sweep{60%,100%{transform:translateX(120%)}}
-@media(prefers-reduced-motion:reduce){.ph:before,.ph:after,h1,.btn:after{animation:none}}
+html{scroll-behavior:smooth}
+body{font-family:Montserrat,system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+body:before{content:"";position:fixed;inset:0;z-index:50;pointer-events:none;opacity:.07;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)'/%3E%3C/svg%3E")}
+.prog{position:fixed;top:0;left:0;height:3px;width:100%;background:linear-gradient(90deg,var(--bronze),var(--gold));transform-origin:0 50%;transform:scaleX(0);z-index:60}
+.glow{position:fixed;width:520px;height:520px;margin:-260px 0 0 -260px;border-radius:50%;background:radial-gradient(circle,rgba(212,175,55,.13),transparent 65%);pointer-events:none;z-index:1;opacity:0;transition:opacity .4s}
+nav{position:fixed;top:0;left:0;right:0;z-index:40;display:flex;justify-content:space-between;align-items:center;padding:18px 28px;font-size:.7rem;letter-spacing:.3em;text-transform:uppercase;font-weight:600;mix-blend-mode:difference}
+nav a{color:#fff;text-decoration:none;margin-left:22px}
+nav a:first-child{margin:0;font-weight:900}
+.hero{position:relative;min-height:100vh;display:flex;flex-direction:column;justify-content:flex-end;padding:120px 28px 14vh;overflow:hidden;background:radial-gradient(120% 80% at 70% 0%,#3a2a14 0%,#171209 45%,var(--bg) 80%)}
+.topo{position:absolute;inset:0;opacity:.22;pointer-events:none}
+.ridge{position:absolute;left:0;right:0;bottom:0;width:100%;height:46vh;pointer-events:none}
+.ridge path{transition:transform .2s linear}
+.sun{position:absolute;right:12%;top:16%;width:min(26vw,260px);aspect-ratio:1;border-radius:50%;background:radial-gradient(circle at 50% 50%,#f0c868 0,#c9892f 45%,rgba(180,84,31,.0) 72%);filter:blur(2px);opacity:.75;animation:pulse 9s ease-in-out infinite alternate}
+@keyframes pulse{to{transform:scale(1.12);opacity:.95}}
+.wrap{position:relative;z-index:2;max-width:1100px;margin:0 auto;width:100%}
+.kicker{font-size:.75rem;letter-spacing:.4em;text-transform:uppercase;color:var(--gold);font-weight:600;margin-bottom:22px;display:flex;align-items:center;gap:14px}
+.kicker:before{content:"";width:46px;height:2px;background:var(--gold)}
+h1{font-weight:900;text-transform:uppercase;line-height:.88;letter-spacing:-.02em;font-size:clamp(3.4rem,15vw,11.5rem)}
+h1 span{display:block;overflow:hidden}
+h1 span i{display:block;font-style:normal;transform:translateY(105%);animation:up 1s cubic-bezier(.2,.8,.2,1) forwards}
+h1 span:nth-child(2) i{animation-delay:.15s;color:transparent;-webkit-text-stroke:2px var(--gold)}
+@keyframes up{to{transform:none}}
+.roles{margin-top:30px;display:flex;flex-wrap:wrap;gap:10px}
+.roles b{font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;font-weight:600;padding:8px 14px;border:1px solid var(--bronze);color:var(--ink);transition:.3s}
+.roles b:hover{background:var(--gold);color:#0e0c09;border-color:var(--gold)}
+.scroll{position:absolute;right:28px;bottom:26px;z-index:3;font-size:.65rem;letter-spacing:.35em;text-transform:uppercase;color:var(--mute);writing-mode:vertical-rl;animation:bob 2.4s ease-in-out infinite}
+@keyframes bob{50%{transform:translateY(8px)}}
+section.blk{position:relative;padding:110px 28px;border-top:1px solid var(--line)}
+.blk .wrap{display:grid;grid-template-columns:1fr 1.5fr;gap:60px;align-items:center}
+.photo{position:relative;aspect-ratio:4/5;overflow:hidden;background:var(--bg2)}
+.photo img{width:100%;height:100%;object-fit:cover;filter:grayscale(.85) contrast(1.15) sepia(.25);transition:filter .6s,transform .8s}
+.photo:hover img{filter:none;transform:scale(1.04)}
+.photo:after{content:"";position:absolute;inset:12px;border:1px solid rgba(212,175,55,.55);pointer-events:none}
+.lab{font-size:.72rem;letter-spacing:.35em;text-transform:uppercase;color:var(--gold);font-weight:600;margin-bottom:18px}
+.big{font-weight:800;text-transform:uppercase;font-size:clamp(1.8rem,4.6vw,3.4rem);line-height:1.04;letter-spacing:-.01em}
+.big em{font-style:normal;color:var(--gold)}
+.bio{margin-top:26px;font-weight:300;font-size:1.1rem;color:#cfc5b2;max-width:34em}
+.bio b{font-weight:600;color:var(--ink)}
+.three{display:grid;grid-template-columns:repeat(3,1fr);gap:0;max-width:1100px;margin:0 auto;border:1px solid var(--line)}
+.pillar{padding:44px 30px 50px;border-right:1px solid var(--line);position:relative;overflow:hidden;transition:background .4s}
+.pillar:last-child{border:0}
+.pillar:hover{background:var(--bg2)}
+.pillar .n{font-weight:900;font-size:4.5rem;line-height:1;color:transparent;-webkit-text-stroke:1px var(--bronze);transition:.4s}
+.pillar:hover .n{color:var(--gold);-webkit-text-stroke:0}
+.pillar h3{margin:18px 0 10px;text-transform:uppercase;font-size:1.25rem;letter-spacing:.06em;font-weight:800}
+.pillar p{font-weight:300;color:var(--mute);font-size:.95rem}
+.pillar svg{position:absolute;right:-16px;bottom:-16px;width:130px;opacity:.1;stroke:var(--gold);fill:none;stroke-width:1.5}
+.links{max-width:1100px;margin:0 auto}
+.grp{margin-top:50px}
+.grp:first-child{margin:0}
+.grp h2{font-size:.72rem;letter-spacing:.35em;text-transform:uppercase;color:var(--mute);font-weight:600;margin-bottom:6px}
+.row{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:22px 4px;border-bottom:1px solid var(--line);color:var(--ink);text-decoration:none;position:relative;transition:padding .35s,color .3s}
+.row:before{content:"";position:absolute;left:0;bottom:-1px;height:1px;width:0;background:var(--gold);transition:width .5s}
+.row:hover{padding-left:20px;color:var(--gold)}
+.row:hover:before{width:100%}
+.row strong{font-size:clamp(1.1rem,2.6vw,1.7rem);font-weight:800;text-transform:uppercase;letter-spacing:.02em}
+.row small{display:block;font-weight:300;color:var(--mute);font-size:.85rem;text-transform:none;letter-spacing:0;margin-top:2px}
+.row .go{font-size:1.6rem;transition:transform .35s}
+.row:hover .go{transform:translateX(8px)}
+.contact{text-align:center;padding:130px 28px 90px;background:radial-gradient(80% 100% at 50% 100%,#2a1d0c,var(--bg))}
+.btn{display:inline-block;margin-top:30px;padding:20px 36px;background:var(--gold);color:#0e0c09;font-weight:800;text-transform:uppercase;letter-spacing:.14em;text-decoration:none;font-size:.9rem;clip-path:polygon(14px 0,100% 0,calc(100% - 14px) 100%,0 100%);transition:.3s}
+.btn:hover{background:var(--ink);transform:translateY(-3px)}
+footer{padding:26px;text-align:center;font-size:.7rem;letter-spacing:.3em;text-transform:uppercase;color:var(--mute);border-top:1px solid var(--line)}
+.rv{opacity:0;transform:translateY(34px);transition:opacity .9s,transform .9s cubic-bezier(.2,.8,.2,1)}
+.rv.in{opacity:1;transform:none}
+@media(max-width:800px){.blk .wrap{grid-template-columns:1fr;gap:36px}.three{grid-template-columns:1fr}.pillar{border-right:0;border-bottom:1px solid var(--line)}nav a:not(:first-child){display:none}.scroll{display:none}.sun{right:-6%}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}h1 span i{transform:none}.rv{opacity:1;transform:none}}
 </style>
 </head>
 <body>
 <div class="prog" id="prog"></div><div class="glow" id="glow"></div>
-<div class="sky" aria-hidden="true"><i></i><i></i><i></i></div><div class="motes" aria-hidden="true"><b style="left:8%;animation-delay:-2s;animation-duration:19s;width:3px;height:3px"></b><b style="left:18%;animation-delay:-9s;animation-duration:24s;width:4px;height:4px"></b><b style="left:29%;animation-delay:-5s;animation-duration:17s;width:3px;height:3px"></b><b style="left:41%;animation-delay:-13s;animation-duration:22s;width:5px;height:5px"></b><b style="left:52%;animation-delay:-1s;animation-duration:20s;width:3px;height:3px"></b><b style="left:63%;animation-delay:-16s;animation-duration:26s;width:4px;height:4px"></b><b style="left:74%;animation-delay:-7s;animation-duration:18s;width:3px;height:3px"></b><b style="left:85%;animation-delay:-11s;animation-duration:23s;width:5px;height:5px"></b><b style="left:93%;animation-delay:-4s;animation-duration:21s;width:3px;height:3px"></b></div>
+<nav><a href="#top">B. Borowski</a><span><a href="#about">About</a><a href="#work">Work</a><a href="#find">Find me</a><a href="mailto:brad@lschurches.com">Contact</a></span></nav>
+
+<header class="hero" id="top">
+<svg class="topo" viewBox="0 0 800 600" preserveAspectRatio="xMidYMid slice" aria-hidden="true" fill="none" stroke="#d4af37" stroke-width="1">
+<path d="M-20 420C120 380 200 440 330 400S560 330 820 380"/><path d="M-20 380C130 330 210 400 340 360S570 290 820 340"/><path d="M-20 340C140 280 220 360 350 320S580 250 820 300"/><path d="M-20 300C150 230 230 320 360 280S590 210 820 260"/><path d="M-20 260C160 180 240 280 370 240S600 170 820 220"/><path d="M-20 220C170 130 250 240 380 200S610 130 820 180"/><path d="M-20 180C180 80 260 200 390 160S620 90 820 140"/><path d="M-20 140C190 30 270 160 400 120S630 50 820 100"/>
+</svg>
+<div class="sun" aria-hidden="true"></div>
 <svg class="ridge" viewBox="0 0 1600 420" preserveAspectRatio="xMidYMax slice" aria-hidden="true">
-<defs><linearGradient id="mist" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f4d9a8" stop-opacity=".0"/><stop offset="1" stop-color="#f4d9a8" stop-opacity=".55"/></linearGradient><filter id="grit" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency=".9" numOctaves="2" seed="4" result="n"/><feColorMatrix in="n" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 .5 0" result="a"/><feComposite in="a" in2="SourceGraphic" operator="in"/></filter></defs>
-<g id="far"><path d="M0 172 L25 163 L50 179 L75 149 L100 146 L125 134 L150 140 L175 140 L200 128 L225 114 L250 105 L275 92 L300 91 L325 109 L350 123 L375 116 L400 112 L425 88 L450 75 L475 86 L500 80 L525 100 L550 108 L575 98 L600 104 L625 110 L650 113 L675 127 L700 141 L725 155 L750 148 L775 175 L800 188 L825 177 L850 179 L875 206 L900 205 L925 182 L950 182 L975 177 L1000 177 L1025 184 L1050 175 L1075 150 L1100 145 L1125 142 L1150 140 L1175 139 L1200 165 L1225 159 L1250 143 L1275 136 L1300 113 L1325 115 L1350 113 L1375 117 L1400 99 L1425 97 L1450 106 L1475 121 L1500 124 L1525 129 L1550 129 L1575 132 L1600 131 L1600 420 L0 420 Z" fill="#ead9bd"/>
-<path d="M450 75 l-34 46 l14 -10 l12 14 l10 -12 l10 12z" fill="#fff6e3" opacity=".8"/></g>
-<g id="mid"><path d="M0 293 L25 299 L50 283 L75 287 L100 304 L125 310 L150 313 L175 333 L200 343 L225 344 L250 330 L275 319 L300 313 L325 300 L350 304 L375 307 L400 303 L425 293 L450 301 L475 296 L500 282 L525 277 L550 296 L575 291 L600 288 L625 283 L650 279 L675 268 L700 276 L725 277 L750 278 L775 294 L800 310 L825 304 L850 304 L875 302 L900 281 L925 292 L950 286 L975 289 L1000 272 L1025 265 L1050 270 L1075 261 L1100 275 L1125 281 L1150 292 L1175 286 L1200 299 L1225 299 L1250 290 L1275 288 L1300 296 L1325 293 L1350 307 L1375 291 L1400 286 L1425 290 L1450 298 L1475 297 L1500 285 L1525 297 L1550 312 L1575 310 L1600 317 L1600 420 L0 420 Z" fill="#d4b98f"/>
-<path d="M0 312 L25 318 L50 302 L75 306 L100 323 L125 329 L150 332 L175 352 L200 362 L225 363 L250 349 L275 338 L300 332 L325 319 L350 323 L375 326 L400 322 L425 312 L450 320 L475 315 L500 301 L525 296 L550 315 L575 310 L600 307 L625 302 L650 298 L675 287 L700 295 L725 296 L750 297 L775 313 L800 329 L825 323 L850 323 L875 321 L900 300 L925 311 L950 305 L975 308 L1000 291 L1025 284 L1050 289 L1075 280 L1100 294 L1125 300 L1150 311 L1175 305 L1200 318 L1225 318 L1250 309 L1275 307 L1300 315 L1325 312 L1350 326 L1375 310 L1400 305 L1425 309 L1450 317 L1475 316 L1500 304 L1525 316 L1550 331 L1575 329 L1600 336" fill="none" stroke="#8a5a24" stroke-opacity="0.26" stroke-width="1"/>
-<path d="M0 331 L25 337 L50 321 L75 325 L100 342 L125 348 L150 351 L175 371 L200 381 L225 382 L250 368 L275 357 L300 351 L325 338 L350 342 L375 345 L400 341 L425 331 L450 339 L475 334 L500 320 L525 315 L550 334 L575 329 L600 326 L625 321 L650 317 L675 306 L700 314 L725 315 L750 316 L775 332 L800 348 L825 342 L850 342 L875 340 L900 319 L925 330 L950 324 L975 327 L1000 310 L1025 303 L1050 308 L1075 299 L1100 313 L1125 319 L1150 330 L1175 324 L1200 337 L1225 337 L1250 328 L1275 326 L1300 334 L1325 331 L1350 345 L1375 329 L1400 324 L1425 328 L1450 336 L1475 335 L1500 323 L1525 335 L1550 350 L1575 348 L1600 355" fill="none" stroke="#8a5a24" stroke-opacity="0.22" stroke-width="1"/>
-<path d="M0 350 L25 356 L50 340 L75 344 L100 361 L125 367 L150 370 L175 390 L200 400 L225 401 L250 387 L275 376 L300 370 L325 357 L350 361 L375 364 L400 360 L425 350 L450 358 L475 353 L500 339 L525 334 L550 353 L575 348 L600 345 L625 340 L650 336 L675 325 L700 333 L725 334 L750 335 L775 351 L800 367 L825 361 L850 361 L875 359 L900 338 L925 349 L950 343 L975 346 L1000 329 L1025 322 L1050 327 L1075 318 L1100 332 L1125 338 L1150 349 L1175 343 L1200 356 L1225 356 L1250 347 L1275 345 L1300 353 L1325 350 L1350 364 L1375 348 L1400 343 L1425 347 L1450 355 L1475 354 L1500 342 L1525 354 L1550 369 L1575 367 L1600 374" fill="none" stroke="#8a5a24" stroke-opacity="0.18" stroke-width="1"/>
-<path d="M0 369 L25 375 L50 359 L75 363 L100 380 L125 386 L150 389 L175 409 L200 419 L225 420 L250 406 L275 395 L300 389 L325 376 L350 380 L375 383 L400 379 L425 369 L450 377 L475 372 L500 358 L525 353 L550 372 L575 367 L600 364 L625 359 L650 355 L675 344 L700 352 L725 353 L750 354 L775 370 L800 386 L825 380 L850 380 L875 378 L900 357 L925 368 L950 362 L975 365 L1000 348 L1025 341 L1050 346 L1075 337 L1100 351 L1125 357 L1150 368 L1175 362 L1200 375 L1225 375 L1250 366 L1275 364 L1300 372 L1325 369 L1350 383 L1375 367 L1400 362 L1425 366 L1450 374 L1475 373 L1500 361 L1525 373 L1550 388 L1575 386 L1600 393" fill="none" stroke="#8a5a24" stroke-opacity="0.14" stroke-width="1"/>
-<path d="M0 388 L25 394 L50 378 L75 382 L100 399 L125 405 L150 408 L175 428 L200 438 L225 439 L250 425 L275 414 L300 408 L325 395 L350 399 L375 402 L400 398 L425 388 L450 396 L475 391 L500 377 L525 372 L550 391 L575 386 L600 383 L625 378 L650 374 L675 363 L700 371 L725 372 L750 373 L775 389 L800 405 L825 399 L850 399 L875 397 L900 376 L925 387 L950 381 L975 384 L1000 367 L1025 360 L1050 365 L1075 356 L1100 370 L1125 376 L1150 387 L1175 381 L1200 394 L1225 394 L1250 385 L1275 383 L1300 391 L1325 388 L1350 402 L1375 386 L1400 381 L1425 385 L1450 393 L1475 392 L1500 380 L1525 392 L1550 407 L1575 405 L1600 412" fill="none" stroke="#8a5a24" stroke-opacity="0.10" stroke-width="1"/>
-</g>
-<g id="near"><path d="M0 222 L25 223 L50 210 L75 209 L100 222 L125 227 L150 224 L175 219 L200 204 L225 210 L250 213 L275 215 L300 226 L325 230 L350 224 L375 233 L400 236 L425 222 L450 217 L475 214 L500 207 L525 200 L550 203 L575 198 L600 206 L625 211 L650 220 L675 213 L700 211 L725 206 L750 204 L775 210 L800 212 L825 214 L850 205 L875 216 L900 212 L925 222 L950 216 L975 224 L1000 216 L1025 217 L1050 208 L1075 200 L1100 198 L1125 196 L1150 204 L1175 198 L1200 187 L1225 197 L1250 206 L1275 210 L1300 209 L1325 196 L1350 196 L1375 188 L1400 190 L1425 195 L1450 186 L1475 194 L1500 198 L1525 215 L1550 227 L1575 226 L1600 239 L1600 420 L0 420 Z" fill="#a98353"/>
-<path d="M0 242 L25 243 L50 230 L75 229 L100 242 L125 247 L150 244 L175 239 L200 224 L225 230 L250 233 L275 235 L300 246 L325 250 L350 244 L375 253 L400 256 L425 242 L450 237 L475 234 L500 227 L525 220 L550 223 L575 218 L600 226 L625 231 L650 240 L675 233 L700 231 L725 226 L750 224 L775 230 L800 232 L825 234 L850 225 L875 236 L900 232 L925 242 L950 236 L975 244 L1000 236 L1025 237 L1050 228 L1075 220 L1100 218 L1125 216 L1150 224 L1175 218 L1200 207 L1225 217 L1250 226 L1275 230 L1300 229 L1325 216 L1350 216 L1375 208 L1400 210 L1425 215 L1450 206 L1475 214 L1500 218 L1525 235 L1550 247 L1575 246 L1600 259" fill="none" stroke="#3b2a1b" stroke-opacity="0.22" stroke-width="1"/>
-<path d="M0 262 L25 263 L50 250 L75 249 L100 262 L125 267 L150 264 L175 259 L200 244 L225 250 L250 253 L275 255 L300 266 L325 270 L350 264 L375 273 L400 276 L425 262 L450 257 L475 254 L500 247 L525 240 L550 243 L575 238 L600 246 L625 251 L650 260 L675 253 L700 251 L725 246 L750 244 L775 250 L800 252 L825 254 L850 245 L875 256 L900 252 L925 262 L950 256 L975 264 L1000 256 L1025 257 L1050 248 L1075 240 L1100 238 L1125 236 L1150 244 L1175 238 L1200 227 L1225 237 L1250 246 L1275 250 L1300 249 L1325 236 L1350 236 L1375 228 L1400 230 L1425 235 L1450 226 L1475 234 L1500 238 L1525 255 L1550 267 L1575 266 L1600 279" fill="none" stroke="#3b2a1b" stroke-opacity="0.16" stroke-width="1"/>
-<path d="M0 282 L25 283 L50 270 L75 269 L100 282 L125 287 L150 284 L175 279 L200 264 L225 270 L250 273 L275 275 L300 286 L325 290 L350 284 L375 293 L400 296 L425 282 L450 277 L475 274 L500 267 L525 260 L550 263 L575 258 L600 266 L625 271 L650 280 L675 273 L700 271 L725 266 L750 264 L775 270 L800 272 L825 274 L850 265 L875 276 L900 272 L925 282 L950 276 L975 284 L1000 276 L1025 277 L1050 268 L1075 260 L1100 258 L1125 256 L1150 264 L1175 258 L1200 247 L1225 257 L1250 266 L1275 270 L1300 269 L1325 256 L1350 256 L1375 248 L1400 250 L1425 255 L1450 246 L1475 254 L1500 258 L1525 275 L1550 287 L1575 286 L1600 299" fill="none" stroke="#3b2a1b" stroke-opacity="0.10" stroke-width="1"/>
-<path d="M0 222 L25 223 L50 210 L75 209 L100 222 L125 227 L150 224 L175 219 L200 204 L225 210 L250 213 L275 215 L300 226 L325 230 L350 224 L375 233 L400 236 L425 222 L450 217 L475 214 L500 207 L525 200 L550 203 L575 198 L600 206 L625 211 L650 220 L675 213 L700 211 L725 206 L750 204 L775 210 L800 212 L825 214 L850 205 L875 216 L900 212 L925 222 L950 216 L975 224 L1000 216 L1025 217 L1050 208 L1075 200 L1100 198 L1125 196 L1150 204 L1175 198 L1200 187 L1225 197 L1250 206 L1275 210 L1300 209 L1325 196 L1350 196 L1375 188 L1400 190 L1425 195 L1450 186 L1475 194 L1500 198 L1525 215 L1550 227 L1575 226 L1600 239 L1600 420 L0 420 Z" fill="#000" filter="url(#grit)" opacity=".25"/></g>
-<rect x="0" y="250" width="1600" height="170" fill="url(#mist)"/>
-<g id="front"><path d="M0 364 L25 362 L50 365 L75 362 L100 358 L125 359 L150 356 L175 353 L200 351 L225 350 L250 355 L275 362 L300 367 L325 366 L350 362 L375 365 L400 366 L425 364 L450 365 L475 370 L500 372 L525 375 L550 376 L575 374 L600 371 L625 372 L650 373 L675 376 L700 383 L725 387 L750 392 L775 397 L800 398 L825 398 L850 396 L875 389 L900 384 L925 380 L950 373 L975 374 L1000 372 L1025 369 L1050 373 L1075 372 L1100 376 L1125 374 L1150 374 L1175 371 L1200 373 L1225 375 L1250 374 L1275 371 L1300 366 L1325 364 L1350 362 L1375 366 L1400 364 L1425 362 L1450 361 L1475 360 L1500 362 L1525 362 L1550 366 L1575 369 L1600 375 L1600 420 L0 420 Z" fill="#3b2a1b"/>
-<path d="M225 318 l-34 41 h67 z M225 292 l-27 41 h54 z M225 265 l-20 41 h40 z M225 239 l-13 41 h27 z " fill="#3b2a1b"/><rect x="224" y="355" width="3" height="14" fill="#3b2a1b"/>
-<path d="M199 338 l-17 20 h34 z M199 324 l-13 20 h27 z M199 311 l-10 20 h20 z M199 298 l-7 20 h13 z " fill="#3b2a1b"/><rect x="198" y="354" width="3" height="7" fill="#3b2a1b"/>
-<path d="M255 345 l-13 16 h27 z M255 335 l-11 16 h22 z M255 324 l-8 16 h16 z M255 314 l-5 16 h11 z " fill="#3b2a1b"/><rect x="254" y="358" width="3" height="6" fill="#3b2a1b"/>
-<path d="M180 336 l-20 24 h39 z M180 321 l-16 24 h31 z M180 305 l-12 24 h24 z M180 290 l-8 24 h16 z " fill="#3b2a1b"/><rect x="178" y="356" width="3" height="8" fill="#3b2a1b"/>
-<path d="M240 345 l-14 17 h28 z M240 334 l-11 17 h22 z M240 323 l-8 17 h17 z M240 312 l-6 17 h11 z " fill="#3b2a1b"/><rect x="238" y="358" width="3" height="6" fill="#3b2a1b"/>
-<path d="M1330 349 l-18 22 h36 z M1330 335 l-14 22 h29 z M1330 321 l-11 22 h22 z M1330 307 l-7 22 h14 z " fill="#3b2a1b"/><rect x="1328" y="367" width="3" height="8" fill="#3b2a1b"/>
-<path d="M1400 344 l-22 27 h45 z M1400 326 l-18 27 h36 z M1400 308 l-13 27 h27 z M1400 291 l-9 27 h18 z " fill="#3b2a1b"/><rect x="1398" y="367" width="3" height="10" fill="#3b2a1b"/>
-<path d="M1450 352 l-13 16 h26 z M1450 341 l-10 16 h21 z M1450 331 l-8 16 h15 z M1450 321 l-5 16 h10 z " fill="#3b2a1b"/><rect x="1448" y="363" width="3" height="6" fill="#3b2a1b"/>
-</g></svg>
-<main>
-<section class="hero">
-<div class="ph rise"><img class="photo" src="brad.jpg" alt="Brad Borowski" width="148" height="148"></div>
-<h1 class="rise" style="animation-delay:.1s">Brad Borowski</h1>
-<p class="roles rise" style="animation-delay:.2s"><span>Pastor</span><span>Church Planter</span><span>Designer</span><span>Coach</span></p>
-<p class="bio rise" style="animation-delay:.3s">I'm the <b>Executive Pastor at Living Stones Church South Reno</b>, husband to Chelsea. I planted a church in Winnemucca, I design and help with digital and AI tools on the side, coach church leaders on vision, strategy and systems.</p>
+<path id="r1" d="M0 190L90 150L170 175L260 110L330 140L430 70L520 120L610 95L700 150L800 120L900 170L1000 100L1100 140L1200 80L1300 130L1400 100L1500 150L1600 120V420H0Z" fill="#2a1f12"/>
+<path id="r2" d="M0 260L120 215L210 250L320 190L420 235L520 200L640 250L760 205L880 255L990 210L1100 250L1210 195L1330 245L1450 215L1600 250V420H0Z" fill="#1d160d"/>
+<path id="r3" d="M0 330L100 305L220 335L340 300L460 330L580 310L700 340L820 305L940 335L1060 312L1180 340L1300 310L1420 335L1600 315V420H0Z" fill="#120e08"/>
+<g id="r4" fill="#0a0806"><path d="M0 380L1600 380V420H0Z"/>
+<path d="M120 380l-22 0 22-70 22 70zM120 345l-18 0 18-60 18 60zM120 310l-13 0 13-48 13 48z"/>
+<path d="M240 382l-26 0 26-90 26 90zM240 335l-20 0 20-70 20 70z"/>
+<path d="M1320 382l-26 0 26-88 26 88zM1320 335l-20 0 20-66 20 66z"/>
+<path d="M1450 380l-22 0 22-72 22 72zM1450 340l-17 0 17-58 17 58z"/>
+<path d="M980 380c0-30 6-50 12-64l-14-26m14 26l16-22m-16 22c2 12 4 22 4 64" stroke="#0a0806" stroke-width="5" fill="none"/></g>
+</svg>
+<div class="wrap">
+<p class="kicker">Reno · Carson City · Nevada</p>
+<h1><span><i>Brad</i></span><span><i>Borowski</i></span></h1>
+<div class="roles"><b>Executive Pastor</b><b>Church Planter</b><b>Coach</b><b>AI Builder</b><b>Hunter</b></div>
+</div>
+<div class="scroll">Scroll</div>
+</header>
+
+<section class="blk" id="about">
+<div class="wrap">
+<div class="photo rv"><img src="brad.jpg" alt="Brad Borowski" width="400" height="500"></div>
+<div class="rv">
+<p class="lab">The man behind it</p>
+<h2 class="big">Lead with <em>conviction.</em> Build with <em>purpose.</em> Stay in the <em>field.</em></h2>
+<p class="bio">I'm the <b>Executive Pastor at Living Stones Church South Reno</b>, husband to Chelsea. I planted a church in Winnemucca, I design and help with digital and AI tools on the side, coach church leaders on vision, strategy and systems.</p>
+</div>
+</div>
 </section>
 
-<h2>Church</h2>
-<div class="cards">
-<a class="card rise" style="animation-delay:.4s" href="https://livingstoneschurches.com/media/speaker/Pastor+Brad+Borowski" target="_blank" rel="noopener"><span class="ico"><svg viewBox="0 0 24 24"><path d="M12 3a3 3 0 0 0-3 3v5a3 3 0 0 0 6 0V6a3 3 0 0 0-3-3zM6 11a6 6 0 0 0 12 0M12 17v4"/></svg></span><span class="t"><strong>Sermons &amp; Speaker Page</strong><small>Messages at Living Stones Churches</small></span><span class="go">→</span></a>
-<a class="card rise" style="animation-delay:.45s" href="https://livingstoneschurches.com/southreno" target="_blank" rel="noopener"><span class="ico"><svg viewBox="0 0 24 24"><path d="M3 21h18M5 21V10l7-6 7 6v11M10 21v-6h4v6"/></svg></span><span class="t"><strong>Living Stones Church South Reno</strong><small>95 Foothill Rd, Reno · Sundays 8, 9:30 &amp; 11</small></span><span class="go">→</span></a>
+<section class="blk">
+<div class="three">
+<div class="pillar rv"><div class="n">01</div><h3>Coach</h3><p>One-on-one coaching for church leaders. Vision, strategy and systems that hold up under pressure.</p><svg viewBox="0 0 24 24"><path d="M3 20l6-11 4 6 3-4 5 9z"/></svg></div>
+<div class="pillar rv" style="transition-delay:.12s"><div class="n">02</div><h3>Build</h3><p>Digital and AI tools that take work off people's plates, so ministry gets the time back.</p><svg viewBox="0 0 24 24"><path d="M12 2v4M12 18v4M2 12h4M18 12h4M6 6l3 3M15 15l3 3M18 6l-3 3M9 15l-3 3"/><circle cx="12" cy="12" r="3"/></svg></div>
+<div class="pillar rv" style="transition-delay:.24s"><div class="n">03</div><h3>Hunt</h3><p>Early mornings, high country, patience and a steady hand. The best thinking happens out there.</p><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><path d="M12 1v6M12 17v6M1 12h6M17 12h6"/></svg></div>
 </div>
+</section>
 
-<h2>Design &amp; Coaching</h2>
-<div class="cards">
-<a class="card rise" style="animation-delay:.5s" href="https://anchorsoul.net/welcome" target="_blank" rel="noopener"><span class="ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="5" r="2"/><path d="M12 7v14M8 11h8M4 14c0 4 3.5 7 8 7s8-3 8-7M4 14l-1.5 2M20 14l1.5 2"/></svg></span><span class="t"><strong>Anchor Soul Design</strong><small>Graphic design with purpose</small></span><span class="go">→</span></a>
-<a class="card rise" style="animation-delay:.55s" href="https://anchorsoul.net/coachinghome" target="_blank" rel="noopener"><span class="ico"><svg viewBox="0 0 24 24"><path d="M3 20l6-11 4 6 3-4 5 9z"/><path d="M15 6l1-2 1 2 2 1-2 1-1 2-1-2-2-1z"/></svg></span><span class="t"><strong>Anchor Soul Coaching</strong><small>One-on-one coaching for church leaders</small></span><span class="go">→</span></a>
-<a class="card rise" style="animation-delay:.6s" href="https://www.creationswap.com/BradBorowski" target="_blank" rel="noopener"><span class="ico"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="9" cy="10" r="2"/><path d="M21 16l-5-5-8 9"/></svg></span><span class="t"><strong>CreationSwap</strong><small>Creative work &amp; media</small></span><span class="go">→</span></a>
+<section class="blk" id="work">
+<div class="links">
+<div class="grp rv"><h2>Church</h2>
+<a class="row" href="https://livingstoneschurches.com/media/speaker/Pastor+Brad+Borowski" target="_blank" rel="noopener"><span><strong>Sermons &amp; Speaker Page</strong><small>Messages at Living Stones Churches</small></span><span class="go">→</span></a>
+<a class="row" href="https://livingstoneschurches.com/southreno" target="_blank" rel="noopener"><span><strong>Living Stones Church South Reno</strong><small>95 Foothill Rd, Reno · Sundays 8, 9:30 &amp; 11</small></span><span class="go">→</span></a></div>
+<div class="grp rv"><h2>Design &amp; Coaching</h2>
+<a class="row" href="https://anchorsoul.net/welcome" target="_blank" rel="noopener"><span><strong>Anchor Soul Design</strong><small>Graphic design with purpose</small></span><span class="go">→</span></a>
+<a class="row" href="https://anchorsoul.net/coachinghome" target="_blank" rel="noopener"><span><strong>Anchor Soul Coaching</strong><small>One-on-one coaching for church leaders</small></span><span class="go">→</span></a>
+<a class="row" href="https://www.creationswap.com/BradBorowski" target="_blank" rel="noopener"><span><strong>CreationSwap</strong><small>Creative work &amp; media</small></span><span class="go">→</span></a></div>
+<div class="grp rv" id="find"><h2>Find me</h2>
+<a class="row" href="https://www.instagram.com/bradborowski/" target="_blank" rel="noopener"><span><strong>Instagram</strong><small>@bradborowski</small></span><span class="go">→</span></a>
+<a class="row" href="https://www.facebook.com/brad.borowski.52" target="_blank" rel="noopener"><span><strong>Facebook</strong><small>Brad Borowski</small></span><span class="go">→</span></a>
+<a class="row" href="https://www.linkedin.com/search/results/people/?keywords=Brad%20Borowski%20Living%20Stones%20Church" target="_blank" rel="noopener"><span><strong>LinkedIn</strong><small>Professional background</small></span><span class="go">→</span></a></div>
 </div>
+</section>
 
-<h2>Find me</h2>
-<div class="cards">
-<a class="card rise" style="animation-delay:.65s" href="https://www.instagram.com/bradborowski/" target="_blank" rel="noopener"><span class="ico"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.3" cy="6.7" r=".6"/></svg></span><span class="t"><strong>Instagram</strong><small>@bradborowski</small></span><span class="go">→</span></a>
-<a class="card rise" style="animation-delay:.7s" href="https://www.facebook.com/brad.borowski.52" target="_blank" rel="noopener"><span class="ico"><svg viewBox="0 0 24 24"><path d="M14 8h3V4h-3a4 4 0 0 0-4 4v3H7v4h3v6h4v-6h3l1-4h-4V8z"/></svg></span><span class="t"><strong>Facebook</strong><small>Brad Borowski</small></span><span class="go">→</span></a>
-<a class="card rise" style="animation-delay:.75s" href="https://www.linkedin.com/search/results/people/?keywords=Brad%20Borowski%20Living%20Stones%20Church" target="_blank" rel="noopener"><span class="ico"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M8 11v6M8 7.5v.01M12 17v-6M12 13a3 3 0 0 1 6 0v4"/></svg></span><span class="t"><strong>LinkedIn</strong><small>Professional background</small></span><span class="go">→</span></a>
-</div>
-
-<section class="contact rise" style="animation-delay:.8s">
-<h2>Say hello</h2>
+<section class="contact rv">
+<p class="lab">Say hello</p>
+<h2 class="big">Let's talk.</h2>
 <a class="btn" href="mailto:brad@lschurches.com">brad@lschurches.com</a>
 </section>
 <footer>© <span id="y">2026</span> Brad Borowski</footer>
-</main>
 <script>
 document.getElementById('y').textContent=new Date().getFullYear();
-if(!matchMedia('(prefers-reduced-motion:reduce)').matches){
-var f=document.getElementById('far'),m=document.getElementById('mid'),n=document.getElementById('near'),g=document.getElementById('front');
-addEventListener('scroll',function(){var y=scrollY;f.style.transform='translateY('+(-y*.03)+'px)';m.style.transform='translateY('+(-y*.045)+'px)';n.style.transform='translateY('+(-y*.07)+'px)';g.style.transform='translateY('+(-y*.1)+'px)'},{passive:true});
-}
-
-var rl=[].slice.call(document.querySelectorAll('.roles span')),ri=0;
-if(rl.length){setInterval(function(){rl.forEach(function(e){e.classList.remove('on')});rl[ri++%rl.length].classList.add('on')},1600)}
 var pg=document.getElementById('prog');
 addEventListener('scroll',function(){pg.style.transform='scaleX('+(scrollY/Math.max(1,document.body.scrollHeight-innerHeight))+')'},{passive:true});
-document.querySelectorAll('h2,.contact,footer').forEach(function(e){e.classList.add('rv')});
-var io=new IntersectionObserver(function(es){es.forEach(function(x){if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}})},{threshold:.15});
+var io=new IntersectionObserver(function(es){es.forEach(function(x){if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}})},{threshold:.12});
 document.querySelectorAll('.rv').forEach(function(e){io.observe(e)});
-if(!matchMedia('(prefers-reduced-motion:reduce)').matches&&matchMedia('(hover:hover)').matches){
-var gl=document.getElementById('glow');
-addEventListener('mousemove',function(e){gl.style.opacity=1;gl.style.left=e.clientX+'px';gl.style.top=e.clientY+'px';var dx=e.clientX/innerWidth-.5;[['far',6],['mid',12],['near',20],['front',30]].forEach(function(p){document.getElementById(p[0]).style.translate=(-dx*p[1])+'px 0'})});
-document.querySelectorAll('a.card').forEach(function(c){c.addEventListener('mousemove',function(e){var r=c.getBoundingClientRect(),x=(e.clientX-r.left)/r.width,y=(e.clientY-r.top)/r.height;c.style.setProperty('--mx',x*100+'%');c.style.setProperty('--my',y*100+'%');c.style.transform='perspective(700px) rotateX('+((.5-y)*7)+'deg) rotateY('+((x-.5)*9)+'deg) translateY(-3px)'});c.addEventListener('mouseleave',function(){c.style.transform=''})})}
+if(!matchMedia('(prefers-reduced-motion:reduce)').matches){
+var rs=['r1','r2','r3','r4'].map(function(i){return document.getElementById(i)});
+addEventListener('scroll',function(){var y=Math.min(scrollY,innerHeight);rs.forEach(function(r,i){r.style.transform='translateY('+(-y*(.03+i*.05))+'px)'})},{passive:true});
+if(matchMedia('(hover:hover)').matches){var gl=document.getElementById('glow');
+addEventListener('mousemove',function(e){gl.style.opacity=1;gl.style.left=e.clientX+'px';gl.style.top=e.clientY+'px'})}}
 </script>
 </body>
 </html>
