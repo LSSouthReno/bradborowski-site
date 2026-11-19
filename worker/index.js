@@ -1,4 +1,4 @@
-// Content store for bradborowski.com: public read, password-protected write. Password lives in the ADMIN_PASSWORD secret.
+// Content store for bradborowski.com: public read and write (no password, by request).
 const CORS = { 'access-control-allow-origin': '*', 'access-control-allow-headers': 'content-type,authorization', 'access-control-allow-methods': 'GET,PUT,POST,OPTIONS' };
 const json = (o, s = 200, h = {}) => new Response(JSON.stringify(o), { status: s, headers: { 'content-type': 'application/json', 'cache-control': 'no-store', ...CORS, ...h } });
 const enc = new TextEncoder();
@@ -16,8 +16,6 @@ export default {
       await new Promise((r) => setTimeout(r, 800)); return json({ error: 'wrong password' }, 401);
     }
     if (u.pathname === '/content' && req.method === 'PUT') {
-      const t = (req.headers.get('authorization') || '').replace(/^Bearer /, '');
-      if (!same(t, await token(env.ADMIN_PASSWORD))) return json({ error: 'not signed in' }, 401);
       const body = await req.json().catch(() => null);
       if (!body || typeof body !== 'object' || Array.isArray(body)) return json({ error: 'bad content' }, 400);
       const clean = {}; for (const [k, v] of Object.entries(body)) if (/^[a-z0-9]{1,20}$/i.test(k) && typeof v === 'string' && v.length < 5000) clean[k] = v;

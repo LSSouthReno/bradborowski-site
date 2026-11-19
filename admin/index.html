@@ -12,7 +12,6 @@ button{background:var(--gold);color:#0e0c09;border:0;border-radius:8px;padding:1
 .bar span{color:var(--mute);font-size:.85rem}a{color:var(--gold)}.hint{color:var(--mute);font-size:.8rem}
 </style></head><body><main id="app">
 <h1>Edit bradborowski.com</h1>
-<div id="login"><label>Password</label><input id="pw" type="password" autocomplete="current-password"><p><button id="go">Sign in</button></p><p id="err" class="hint"></p></div>
 <div id="editor" hidden><p class="hint">Change any words or links, then tap Save. The site updates right away. Simple bold works: &lt;b&gt;word&lt;/b&gt;.</p><div id="fields"></div></div>
 </main>
 <div class="bar" id="bar" hidden><span id="msg">Ready</span><span><a href="/" target="_blank">View site</a> &nbsp; <button id="save">Save</button></span></div>
@@ -30,14 +29,12 @@ async function load(){
  });
  var out='',last='';defs.forEach(function(f,i){if(f.g!==last){out+='<div class="g">'+f.g+'</div>';last=f.g}
   var v=cur[f.key]!=null?cur[f.key]:f.val;out+='<label>'+f.label+(f.kind==='link'?' (web address)':'')+'</label>'+(f.long?'<textarea data-i="'+i+'">':'<input data-i="'+i+'" value="')+esc(v)+(f.long?'</textarea>':'">')});
- $('fields').innerHTML=out;$('login').hidden=true;$('editor').hidden=false;$('bar').hidden=false;
+ $('fields').innerHTML=out;$('editor').hidden=false;$('bar').hidden=false;
 }
 function esc(s){return String(s).replace(/&/g,'&amp;').replace(/"/g,'&quot;').replace(/</g,'&lt;')}
-async function login(){var r=await fetch(API+'/login',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({password:$('pw').value})});
- if(!r.ok){$('err').textContent='That password is not right.';return}tok=(await r.json()).token;localStorage.setItem('bbtok',tok);load()}
 async function save(){var o={};document.querySelectorAll('[data-i]').forEach(function(el){var f=defs[el.getAttribute('data-i')];if(el.value!==f.val)o[f.key]=el.value});
- $('msg').textContent='Saving…';var r=await fetch(API+'/content',{method:'PUT',headers:{'content-type':'application/json',authorization:'Bearer '+tok},body:JSON.stringify(o)});
- if(r.status===401){localStorage.removeItem('bbtok');location.reload();return}$('msg').textContent=r.ok?'Saved. Live now.':'Could not save'}
-$('go').onclick=login;$('pw').onkeydown=function(e){if(e.key==='Enter')login()};$('save').onclick=save;
-if(tok)load().catch(function(){});
+ $('msg').textContent='Saving…';var r=await fetch(API+'/content',{method:'PUT',headers:{'content-type':'application/json'},body:JSON.stringify(o)});
+ $('msg').textContent=r.ok?'Saved. Live now.':'Could not save'}
+$('save').onclick=save;
+load().catch(function(){$('msg').textContent='Could not load'});
 </script></body></html>

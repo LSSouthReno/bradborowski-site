@@ -31,10 +31,12 @@ nav a:first-child{margin:0;font-weight:900}
 .wrap{position:relative;z-index:2;max-width:1100px;margin:0 auto;width:100%}
 .kicker{font-size:.75rem;letter-spacing:.4em;text-transform:uppercase;color:var(--gold);font-weight:600;margin-bottom:22px;display:flex;align-items:center;gap:14px}
 .kicker:before{content:"";width:46px;height:2px;background:var(--gold)}
-h1{font-weight:900;text-transform:uppercase;line-height:.88;letter-spacing:-.02em;font-size:clamp(3.4rem,15vw,11.5rem)}
+h1{font-weight:900;text-transform:uppercase;line-height:.88;letter-spacing:-.02em;font-size:clamp(2rem,7vw,5rem)}
+.id{display:flex;align-items:center;gap:clamp(14px,3vw,32px)}
+.avatar{width:clamp(84px,18vw,160px);height:clamp(84px,18vw,160px);aspect-ratio:1/1;border-radius:50%;object-fit:cover;flex:none;border:2px solid var(--gold);box-shadow:0 0 0 6px rgba(212,175,55,.15)}
 h1 span{display:block;overflow:hidden}
 h1 span i{display:block;font-style:normal;transform:translateY(105%);animation:up 1s cubic-bezier(.2,.8,.2,1) forwards}
-h1 span:nth-child(2) i{animation-delay:.15s;color:transparent;-webkit-text-stroke:2px var(--gold)}
+h1 span:nth-child(2) i{animation-delay:.15s;color:transparent;-webkit-text-stroke:1px var(--gold)}
 @keyframes up{to{transform:none}}
 .roles{margin-top:30px;display:flex;flex-wrap:wrap;gap:10px}
 .roles b{font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;font-weight:600;padding:8px 14px;border:1px solid var(--bronze);color:var(--ink);transition:.3s}
@@ -103,7 +105,7 @@ footer{padding:26px;text-align:center;font-size:.7rem;letter-spacing:.3em;text-t
 <path d="M980 380c0-30 6-50 12-64l-14-26m14 26l16-22m-16 22c2 12 4 22 4 64" stroke="#0a0806" stroke-width="5" fill="none"/></g></svg>
 <div class="wrap">
 <p class="kicker" data-k="t1">Reno · Carson City · Nevada</p>
-<h1><span><i data-k="hfirst">Brad</i></span><span><i data-k="hlast">Borowski</i></span></h1>
+<div class="id"><img class="avatar" src="brad.jpg" alt="Brad Borowski" width="160" height="160"><h1><span><i data-k="hfirst">Brad</i></span><span><i data-k="hlast">Borowski</i></span></h1></div>
 <div class="roles"><b data-k="t2">Executive Pastor</b><b data-k="t3">Church Planter</b><b data-k="t4">Coach</b><b data-k="t5">AI Builder</b><b data-k="t6">Hunter</b></div>
 </div>
 <div class="scroll">Scroll</div>
