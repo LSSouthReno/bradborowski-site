@@ -14,7 +14,16 @@
 <style>
 :root{--bg:#f4efe7;--ink:#1d1a16;--mute:#6d655a;--card:#fffdf9;--line:#e3d9c8;--gold:#b8863b;--bronze:#8a5a24}
 *{box-sizing:border-box;margin:0}
-body{font-family:Montserrat,system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+body{font-family:Montserrat,system-ui,sans-serif;background:transparent;color:var(--ink);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+.sky{position:fixed;inset:0;z-index:-2;pointer-events:none;overflow:hidden;background:linear-gradient(180deg,#f8efe0 0%,#f4efe7 45%,#efdfc4 100%)}
+.sky i{position:absolute;border-radius:50%;filter:blur(70px);will-change:transform;animation:drift 26s ease-in-out infinite alternate}
+.sky i:nth-child(1){width:60vmax;height:60vmax;left:-15vmax;top:-20vmax;background:radial-gradient(circle,rgba(232,170,90,.55),transparent 65%)}
+.sky i:nth-child(2){width:50vmax;height:50vmax;right:-15vmax;top:5vh;background:radial-gradient(circle,rgba(214,140,110,.40),transparent 65%);animation-duration:34s;animation-delay:-8s}
+.sky i:nth-child(3){width:55vmax;height:40vmax;left:15vw;bottom:-18vmax;background:radial-gradient(circle,rgba(184,134,59,.38),transparent 65%);animation-duration:30s;animation-delay:-14s}
+@keyframes drift{from{transform:translate3d(0,0,0) scale(1)}to{transform:translate3d(8vw,6vh,0) scale(1.15)}}
+.motes{position:fixed;inset:0;z-index:-1;pointer-events:none}
+.motes b{position:absolute;bottom:-10px;width:4px;height:4px;border-radius:50%;background:#d9a441;opacity:0;animation:float 18s linear infinite}
+@keyframes float{0%{transform:translateY(0) translateX(0);opacity:0}10%{opacity:.6}90%{opacity:.4}100%{transform:translateY(-105vh) translateX(30px);opacity:0}}
 .ridge{position:fixed;inset:auto 0 0 0;height:38vh;z-index:-1;opacity:.5;pointer-events:none}
 .ridge path{transition:transform .2s linear}
 main{max-width:640px;margin:0 auto;padding:56px 22px 90px}
@@ -41,10 +50,11 @@ a.card:hover,a.card:focus-visible{transform:translateY(-3px);box-shadow:0 12px 2
 footer{text-align:center;margin-top:50px;font-size:.75rem;color:var(--mute);letter-spacing:.08em}
 .rise{opacity:0;transform:translateY(14px);animation:rise .7s ease forwards}
 @keyframes rise{to{opacity:1;transform:none}}
-@media(prefers-reduced-motion:reduce){.rise{animation:none;opacity:1;transform:none}a.card,.btn{transition:none}}
+@media(prefers-reduced-motion:reduce){.sky i,.motes b{animation:none}.motes{display:none}.rise{animation:none;opacity:1;transform:none}a.card,.btn{transition:none}}
 </style>
 </head>
 <body>
+<div class="sky" aria-hidden="true"><i></i><i></i><i></i></div><div class="motes" aria-hidden="true"><b style="left:8%;animation-delay:-2s;animation-duration:19s;width:3px;height:3px"></b><b style="left:18%;animation-delay:-9s;animation-duration:24s;width:4px;height:4px"></b><b style="left:29%;animation-delay:-5s;animation-duration:17s;width:3px;height:3px"></b><b style="left:41%;animation-delay:-13s;animation-duration:22s;width:5px;height:5px"></b><b style="left:52%;animation-delay:-1s;animation-duration:20s;width:3px;height:3px"></b><b style="left:63%;animation-delay:-16s;animation-duration:26s;width:4px;height:4px"></b><b style="left:74%;animation-delay:-7s;animation-duration:18s;width:3px;height:3px"></b><b style="left:85%;animation-delay:-11s;animation-duration:23s;width:5px;height:5px"></b><b style="left:93%;animation-delay:-4s;animation-duration:21s;width:3px;height:3px"></b></div>
 <svg class="ridge" viewBox="0 0 1200 300" preserveAspectRatio="none" aria-hidden="true">
 <path id="far" d="M0 300V170l120-50 110 40 150-80 140 70 130-60 170 90 120-40 160 60v100z" fill="#e6d8bf"/>
 <path id="near" d="M0 300V230l140-50 120 30 170-70 150 80 140-40 180 60 130-30 170 40v50z" fill="#d8c39f"/>
@@ -73,7 +83,7 @@ footer{text-align:center;margin-top:50px;font-size:.75rem;color:var(--mute);lett
 <h2>Find me</h2>
 <div class="cards">
 <a class="card rise" style="animation-delay:.65s" href="https://www.instagram.com/bradborowski/" target="_blank" rel="noopener"><span class="ico"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.3" cy="6.7" r=".6"/></svg></span><span class="t"><strong>Instagram</strong><small>@bradborowski</small></span><span class="go">→</span></a>
-<a class="card rise" style="animation-delay:.7s" href="https://www.facebook.com/AnchorSoulDesignCo/" target="_blank" rel="noopener"><span class="ico"><svg viewBox="0 0 24 24"><path d="M14 8h3V4h-3a4 4 0 0 0-4 4v3H7v4h3v6h4v-6h3l1-4h-4V8z"/></svg></span><span class="t"><strong>Facebook</strong><small>Anchor Soul Design Co.</small></span><span class="go">→</span></a>
+<a class="card rise" style="animation-delay:.7s" href="https://www.facebook.com/brad.borowski.52" target="_blank" rel="noopener"><span class="ico"><svg viewBox="0 0 24 24"><path d="M14 8h3V4h-3a4 4 0 0 0-4 4v3H7v4h3v6h4v-6h3l1-4h-4V8z"/></svg></span><span class="t"><strong>Facebook</strong><small>Brad Borowski</small></span><span class="go">→</span></a>
 <a class="card rise" style="animation-delay:.75s" href="https://www.linkedin.com/search/results/people/?keywords=Brad%20Borowski%20Living%20Stones%20Church" target="_blank" rel="noopener"><span class="ico"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M8 11v6M8 7.5v.01M12 17v-6M12 13a3 3 0 0 1 6 0v4"/></svg></span><span class="t"><strong>LinkedIn</strong><small>Professional background</small></span><span class="go">→</span></a>
 </div>
 
