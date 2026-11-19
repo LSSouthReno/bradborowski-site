@@ -20,6 +20,18 @@ body{font-family:Montserrat,system-ui,sans-serif;background:var(--bg);color:var(
 body:before{content:"";position:fixed;inset:0;z-index:50;pointer-events:none;opacity:.07;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)'/%3E%3C/svg%3E")}
 .prog{position:fixed;top:0;left:0;height:3px;width:100%;background:linear-gradient(90deg,var(--bronze),var(--gold));transform-origin:0 50%;transform:scaleX(0);z-index:60}
 .plane{position:fixed;left:0;top:0;width:46px;height:46px;margin:-23px 0 0 -23px;pointer-events:none;z-index:70;opacity:0;transition:opacity .4s;filter:drop-shadow(0 2px 6px rgba(0,0,0,.6));will-change:transform}
+.runway,.hangar{display:none}
+@media(hover:hover) and (pointer:fine){.runway{display:block;position:fixed;left:0;right:0;bottom:0;height:44px;z-index:64;pointer-events:none;background:linear-gradient(180deg,rgba(14,12,9,0) 0,rgba(10,8,6,.92) 38%,#0a0806 100%);border-top:1px solid #2e2820;opacity:0;transition:opacity .5s}
+.runway:after{content:"";position:absolute;left:0;right:0;top:22px;height:2px;background:repeating-linear-gradient(90deg,var(--gold) 0 18px,transparent 18px 36px);opacity:.55}
+.hangar{display:block;position:fixed;right:16px;bottom:0;width:120px;height:62px;z-index:66;pointer-events:none;opacity:0;transition:opacity .5s}
+.hangar svg{width:100%;height:100%;display:block;overflow:visible}
+.hangar .glow{opacity:0;transition:opacity .45s ease}
+.hangar.on .glow{opacity:1}
+.hangar.on{filter:drop-shadow(0 0 14px rgba(240,200,104,.35))}
+body.air .runway,body.air .hangar{opacity:1}
+.plane .gear{opacity:0;transition:opacity .3s}.plane.gnd .gear{opacity:1}
+footer{padding-bottom:64px}}
+@media(prefers-reduced-motion:reduce){.runway,.hangar{display:none!important}}
 nav{position:fixed;top:0;left:0;right:0;z-index:40;display:flex;justify-content:space-between;align-items:center;padding:18px 28px;font-size:.7rem;letter-spacing:.3em;text-transform:uppercase;font-weight:600;mix-blend-mode:difference}
 nav a{color:#fff;text-decoration:none;margin-left:22px}
 nav a:first-child{margin:0;font-weight:900}
@@ -88,7 +100,9 @@ footer{padding:26px;text-align:center;font-size:.7rem;letter-spacing:.3em;text-t
 </style>
 </head>
 <body>
-<div class="prog" id="prog"></div><svg class="plane" id="plane" viewBox="-23 -23 46 46" aria-hidden="true" focusable="false"><g fill="#d4af37" stroke="#0e0c09" stroke-width=".8" stroke-linejoin="round"><path d="M20 0 C17 -2.4 8 -3 -8 -1.6 L-17 -.8 L-17 .8 L-8 1.6 C8 3 17 2.4 20 0Z"/><path d="M6 -2 L3 -19 L-3 -19 L-1 -2Z M6 2 L3 19 L-3 19 L-1 2Z"/><path d="M-12 -1 L-17 -8 L-20 -8 L-17.5 -1Z M-12 1 L-17 8 L-20 8 L-17.5 1Z"/><path d="M-17 0 L-21 0" stroke="#d4af37" stroke-width="1.2"/><circle cx="-21.5" cy="0" r="1.1"/><path d="M13 0 L13 0" /><rect x="19" y="-2.6" width="1.6" height="5.2" rx=".6" fill="#efe7d8" stroke="none"/></g><circle cx="5" cy="-6.5" r="1.3" fill="#9c7a26"/><circle cx="5" cy="6.5" r="1.3" fill="#9c7a26"/></svg>
+<div class="prog" id="prog"></div><svg class="plane" id="plane" viewBox="-23 -23 46 46" aria-hidden="true" focusable="false"><g fill="#d4af37" stroke="#0e0c09" stroke-width=".8" stroke-linejoin="round"><path d="M20 0 C17 -2.4 8 -3 -8 -1.6 L-17 -.8 L-17 .8 L-8 1.6 C8 3 17 2.4 20 0Z"/><path d="M6 -2 L3 -19 L-3 -19 L-1 -2Z M6 2 L3 19 L-3 19 L-1 2Z"/><path d="M-12 -1 L-17 -8 L-20 -8 L-17.5 -1Z M-12 1 L-17 8 L-20 8 L-17.5 1Z"/><path d="M-17 0 L-21 0" stroke="#d4af37" stroke-width="1.2"/><circle cx="-21.5" cy="0" r="1.1"/><path d="M13 0 L13 0" /><rect x="19" y="-2.6" width="1.6" height="5.2" rx=".6" fill="#efe7d8" stroke="none"/></g><g class="gear" fill="#0e0c09" stroke="#d4af37" stroke-width=".6"><rect x="2" y="-11" width="6" height="3" rx="1"/><rect x="2" y="8" width="6" height="3" rx="1"/><rect x="-19" y="-1.4" width="3.4" height="2.8" rx="1"/></g><circle cx="5" cy="-6.5" r="1.3" fill="#9c7a26"/><circle cx="5" cy="6.5" r="1.3" fill="#9c7a26"/></svg>
+<div class="runway" id="runway" aria-hidden="true"></div>
+<div class="hangar" id="hangar" aria-hidden="true"><svg viewBox="0 0 120 62"><path d="M4 62V30Q4 8 60 6Q116 8 116 30V62Z" fill="#1d160d" stroke="#9c7a26" stroke-width="1.5"/><path d="M22 62V36Q22 20 60 18Q98 20 98 36V62Z" fill="#0a0806"/><g class="glow"><path d="M22 62V36Q22 20 60 18Q98 20 98 36V62Z" fill="#f0c868" opacity=".38"/><rect x="40" y="26" width="40" height="36" fill="#f0c868" opacity=".18"/><rect x="8" y="34" width="9" height="9" rx="1" fill="#f0c868"/><rect x="103" y="34" width="9" height="9" rx="1" fill="#f0c868"/><circle cx="60" cy="12" r="3" fill="#f6dc9a"/></g><rect x="8" y="34" width="9" height="9" rx="1" fill="none" stroke="#9c7a26"/><rect x="103" y="34" width="9" height="9" rx="1" fill="none" stroke="#9c7a26"/></svg></div>
 <nav><a href="#top">B. Borowski</a><span><a href="#about">About</a><a href="#work">Work</a><a href="#find">Find me</a><a href="mailto:brad@lschurches.com">Contact</a></span></nav>
 
 <header class="hero" id="top">
@@ -160,12 +174,27 @@ if(!matchMedia('(prefers-reduced-motion:reduce)').matches){
 var rs=['r1','r2','r3','r4'].map(function(i){return document.getElementById(i)}),sy=0,tk=false,K=[.03,.08,.13,.18];
 function paint(){tk=false;var y=Math.min(sy,innerHeight);for(var i=0;i<rs.length;i++)rs[i].style.transform='translate3d(0,'+(-y*K[i]).toFixed(1)+'px,0)'}
 addEventListener('scroll',function(){sy=scrollY;if(!tk){tk=true;requestAnimationFrame(paint)}},{passive:true});
-if(matchMedia('(hover:hover) and (pointer:fine)').matches){var pl=document.getElementById('plane'),tx=-100,ty=-100,px=-100,py=-100,ang=0,seen=false;
-addEventListener('mousemove',function(e){tx=e.clientX;ty=e.clientY;if(!seen){seen=true;px=tx;py=ty;pl.style.opacity=1}},{passive:true});
-document.addEventListener('mouseleave',function(){pl.style.opacity=0;seen=false});
-(function fly(){var dx=tx-px,dy=ty-py;px+=dx*.14;py+=dy*.14;
-if(Math.hypot(dx,dy)>6){var want=Math.atan2(dy,dx),d=want-ang;d-=Math.round(d/6.2832)*6.2832;ang+=d*.12}
-pl.style.transform='translate3d('+(px+14)+'px,'+(py+14)+'px,0) rotate('+ang+'rad)';requestAnimationFrame(fly)})()}}
+if(matchMedia('(hover:hover) and (pointer:fine)').matches){var pl=document.getElementById('plane'),hg=document.getElementById('hangar'),tx=-100,ty=-100,px=-100,py=-100,ang=0,seen=false,
+st='fly',armed=false,sc=1,off=14,roll=0,W=innerWidth,H=innerHeight;
+function geo(){W=innerWidth;H=innerHeight}addEventListener('resize',geo);
+function inHangar(){var r=hg.getBoundingClientRect();return tx>=r.left-6&&tx<=r.right+6&&ty>=r.top-6&&ty<=r.bottom+6}
+addEventListener('mousemove',function(e){tx=e.clientX;ty=e.clientY;if(!seen){seen=true;px=tx;py=ty;pl.style.opacity=1;document.body.classList.add('air')}
+if(st==='parked'){var h=inHangar();if(!h)armed=true;else if(armed){st='roll';roll=0;hg.classList.remove('on')}}},{passive:true});
+document.addEventListener('mouseleave',function(){pl.style.opacity=0;seen=false;document.body.classList.remove('air')});
+(function fly(){var runY=H-22,door=W-76,gnd=st!=='fly',tgtX,tgtY;
+if(st==='fly'){tgtX=tx;tgtY=ty;if(ty>H-60&&seen)st='land'}
+else if(st==='land'){tgtX=Math.min(Math.max(tx,24),door);tgtY=runY;if(ty<H-130)st='fly';else if(tx>door-10){st='parked';armed=false;hg.classList.add('on')}}
+else if(st==='roll'){tgtX=Math.min(Math.max(tx,24),door);tgtY=runY}
+else{tgtX=door;tgtY=runY}
+gnd=st!=='fly';
+var dx=tgtX-px,dy=tgtY-py,k=st==='parked'?.1:.14;px+=dx*k;py+=dy*k;
+if(st==='roll'){roll+=Math.abs(dx*k);if(roll>380&&ty>H-130)st='land';else if(roll>380)st='fly'}
+var want;
+if(gnd){var d0=0-ang;d0-=Math.round(d0/6.2832)*6.2832;ang+=d0*.15}
+else if(Math.hypot(dx,dy)>6){want=Math.atan2(dy,dx);var d=want-ang;d-=Math.round(d/6.2832)*6.2832;ang+=d*.12}
+sc+=((gnd?.8:1)-sc)*.12;off+=((gnd?0:14)-off)*.12;
+pl.classList.toggle('gnd',gnd&&Math.abs(py-runY)<8);
+pl.style.transform='translate3d('+(px+off)+'px,'+(py+off)+'px,0) rotate('+ang+'rad) scale('+sc+')';requestAnimationFrame(fly)})()}}
 </script>
 </body>
 </html>
